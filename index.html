@@ -1354,18 +1354,7 @@ const questionsData = [
             { text: "la prévention, le dépistage, le diagnostic, le traitement et le suivi des patients", correct: true },
             { text: "l'éducation pour la santé", correct: true }
         ]
-    }
-];
-
-Si tu veux, prochaine étape utile (très importante pour ton site QCM) :
-👉 
-je peux te faire un parser automatique .md → JS (tu colles ton Word exporté et ça génère tout seul questionsData sans travail manuel).
-
-ok refais pareil pour le 2ème bloc que je t'ai donné
-
-Voici le 2e bloc entièrement converti, avec texte strictement identique au copier-coller, sans reformulation, uniquement structuration en questionsData.
-
-const questionsData = [
+    },
     // ================= RAISONNEMENT MÉDICAL EN MU =================
     {
         category: "RAISONNEMENT MÉDICAL EN MU",
@@ -2053,7 +2042,1045 @@ const questionsData = [
             { text: "Pour la déclaration aux autorités de santé d’une tuberculose", correct: true }
         ]
     },
-  
+  {
+        "category": "DETRESSES GENERALES",
+        "text": "A propos du choc hypovolémique :",
+        "options": [
+            { "text": "Le premier traitement du choc hypovolémique est la noradrénaline", "correct": false },
+            { "text": "Il correspond à une baisse brutale d'environ 20 % de la masse sanguine totale", "correct": false },
+            { "text": "La pression artérielle reste normale jusqu'à une baisse de la volémie d'au moins 30%", "correct": true },
+            { "text": "La fréquence cardiaque augmente dès 10% de baisse de la volémie", "correct": true },
+            { "text": "La fréquence cardiaque diminue dès 10% de baisse de la volémie", "correct": false }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Concernant l'anaphylaxie :",
+        "options": [
+            { "text": "Il s'agit d'une réaction immunologique entraînant une vasoconstriction", "correct": false },
+            { "text": "On injecte de l'adrénaline dès l'atteinte cutanéo-muqueuse", "correct": false },
+            { "text": "Le traitement est l'adrénaline en intramusculaire à 1 mg", "correct": false },
+            { "text": "Le grade 1 ne concerne que les réactions cutanéo-muqueuses et est d'installation progressive", "correct": false },
+            { "text": "On injecte de l'adrénaline lors d'une atteinte respiratoire ou cardiovasculaire ou digestive", "correct": true }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Dans le choc hémorragique traumatique :",
+        "options": [
+            { "text": "Il faut administrer de l'acide tranexamique dans l'heure du début du choc", "correct": false },
+            { "text": "L'objectif de pression artérielle moyenne est de 65 mmHg pour tous les patients", "correct": false },
+            { "text": "L'objectif de pression artérielle moyenne est de 85 mmHg pour tous les patients", "correct": false },
+            { "text": "L'objectif de pression artérielle moyenne est de 80 mmHg pour les traumatisés crâniens", "correct": true },
+            { "text": "L'objectif de pression artérielle moyenne est de 65 mmHg pour les traumatisés crâniens", "correct": false }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Parmi les éléments entrant dans la définition du choc septique on retrouve :",
+        "options": [
+            { "text": "Présence d'un sepsis quel qu'il soit avec un lactate supérieur à 1 mmol/l", "correct": false },
+            { "text": "Lactate supérieur à 3 mmol/l malgré un remplissage de 500 mL", "correct": false },
+            { "text": "Lactate supérieur à 2 mmol/l malgré un remplissage adéquat", "correct": true },
+            { "text": "Présence d'un sepsis avec la nécessité de drogues vasopressives pour maintenir une PAM > 85 mmHg", "correct": false },
+            { "text": "Un lactate supérieur à 2 mmol/l suffit à définir un choc septique", "correct": false }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Dans le cadre d’un sepsis, quels sont les signes pouvant être en rapport avec une dysfonction d’organe :",
+        "options": [
+            { "text": "Temps de recoloration cutanée supérieure à 2 secondes", "correct": false },
+            { "text": "Pression artérielle systolique inférieure à 90 mmHg", "correct": true },
+            { "text": "Bradycardie", "correct": false },
+            { "text": "Agitation", "correct": true },
+            { "text": "Fréquence respiratoire supérieure à 20", "correct": true }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Une détresse respiratoire de type 1 :",
+        "options": [
+            { "text": "Concerne avant tout une dysfonction respiratoire d'origine neurologique", "correct": false },
+            { "text": "Concerne le plus souvent une affection du parenchyme pulmonaire - à l'étage alvéolaire", "correct": true },
+            { "text": "Se manifeste prioritairement par une hypercapnie", "correct": false },
+            { "text": "L'œdème aigue du poumon d'origine cardiogénique est une détresse de type 1", "correct": true },
+            { "text": "Vrai. Cette affection touche plus particulièrement l'étage alvéolaire et sa gravité tient tout d'abord à la profondeur de l'hypoxémie.", "correct": true },
+            { "text": "Se manifeste prioritairement par une hypoxémie", "correct": true }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "La confusion mentale :",
+        "options": [
+            { "text": "Elle peut se présenter sous une forme stuporeuse ou sous une forme agitée", "correct": true },
+            { "text": "Elle correspond à un coma peu profond", "correct": true },
+            { "text": "Elle est associée dans l’ensemble aux mêmes pathologies que les comas", "correct": true },
+            { "text": "Doit faire rechercher une étiologie psychiatrique", "correct": false },
+            { "text": "Elle est de diagnostic difficile chez les patients déments", "correct": true }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Selon la définition sémiologique « princeps », un patient dans le coma :",
+        "options": [
+            { "text": "Ne respire pas", "correct": false },
+            { "text": "Ne parle pas", "correct": true },
+            { "text": "Ne bouge pas volontairement les membres", "correct": true },
+            { "text": "Ne répond pas aux ordres simples", "correct": true },
+            { "text": "A les yeux fermés", "correct": true }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Concernant le coma :",
+        "options": [
+            { "text": "Il est considéré comme une « défaillance vitale » au même titre que « l’état de choc » ou « l’insuffisance rénale aiguë »", "correct": true },
+            { "text": "Il correspond à une atteinte globale de fonctionnement du cortex cérébral", "correct": false },
+            { "text": "Le diagnostic clinique doit toujours être conforté par une imagerie cérébrale", "correct": false },
+            { "text": "Il est parfois difficile à distinguer d’un arrêt cardiaque", "correct": false },
+            { "text": "Il est défini par un score de Glasgow < 8", "correct": false }
+        ]
+    },
+    {
+        "category": "DETRESSES GENERALES",
+        "text": "Parmi les diagnostics différentiels du coma qui peuvent se présenter cliniquement comme un coma mais qui ne correspondent pas à une atteinte de la substance réticulée activatrice ascendante, on retient :",
+        "options": [
+            { "text": "Le locked-in syndrome", "correct": true },
+            { "text": "Le mutisme akinétique", "correct": true },
+            { "text": "Un état de catatonie", "correct": true },
+            { "text": "Un état de mort cérébral", "correct": false },
+            { "text": "Une simulation hystérique", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "A propos de l'effet stabilisant de membrane, quelle(s) est(sont) la(les) proposition(s) exacte(s) ?",
+        "options": [
+            { "text": "le principe de son traitement repose sur l'alcalinisation sanguine", "correct": false },
+            { "text": "Son diagnostic est évoqué sur l'électrocardiogramme: allongement du QTc, élargissement du QRS et grande onde R en aVr", "correct": true },
+            { "text": "Il peut être observé pour tous les toxiques, cela dépend juste de la doses absorbée", "correct": false },
+            { "text": "Il s'agit d'une inhibition de la repolarisation des cardiomyocytes", "correct": false },
+            { "text": "Il apparaît du fait d'un transport diminué du Na+ de l'extérieur vers l'intérieur du cardiomyocyte", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "A propos des toxidromes, quelle(s) est(sont) la(les) proposition(s) exacte(s) ?",
+        "options": [
+            { "text": "ils peuvent être modifiés lors d'une cointoxication", "correct": true },
+            { "text": "leur identification peut dépendre de la dose ingérée", "correct": true },
+            { "text": "le reconnaissance d'un toxidrome impose la réalisation d'analyses biologiques", "correct": false },
+            { "text": "le toxidrome aux opiacés est caractérisé par un myosis et une bradypnée", "correct": true },
+            { "text": "le toxidrome sérotoninergique est caractérisé entre autres par une hypertonie, une confusion et des sueurs.", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Lors d'une intoxication médicamenteuse volontaire, dans quelle(s) situation(s) doit on réaliser des analyses sanguines ?",
+        "options": [
+            { "text": "pour confirmer la prise de benzodiazépines", "correct": false },
+            { "text": "pour mesurer la concentration d'un toxique lorsque celle -ci est corrélée à l'évolution du patient", "correct": true },
+            { "text": "pour évaluer la gravité globale de toute intoxication", "correct": false },
+            { "text": "pour savoir si le patient peut s'entretenir avec le psychiatre", "correct": false },
+            { "text": "pour juger de l'efficacité de la naloxone", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Parmi les classes de toxiques suivant, laquelle (lesquelles) est (sont) associée(s) à un risque accru d'admission en réanimation ?",
+        "options": [
+            { "text": "paracétamol", "correct": false },
+            { "text": "benzodiazépine", "correct": false },
+            { "text": "inhibiteur de recapture de la sérotonine", "correct": true },
+            { "text": "antipsychotique", "correct": true },
+            { "text": "cardiotrope", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Parmi les critères suivants, lequel (lesquels) est (sont) associé(s) à une gravité accrue des intoxications médicamenteuses volontaires ?",
+        "options": [
+            { "text": "un délai absorption des toxiques - admission aux urgences entre 3 et 4 heures", "correct": false },
+            { "text": "un score de Glasgow < 13", "correct": true },
+            { "text": "la présence de convulsions", "correct": true },
+            { "text": "l'ingestion d'antidépresseurs tricycliques", "correct": true },
+            { "text": "la coingestion d'alcool", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Quel est LE biomarqueur recommandé pour les suspicions de syndrome coronarien aigu non ST+ (guidelines ESC) ?",
+        "options": [
+            { "text": "la troponine conventionnelle", "correct": false },
+            { "text": "les CPK", "correct": false },
+            { "text": "la myoglobine associée à la troponine conventionnelle", "correct": false },
+            { "text": "l'association : copeptine et myoglobine", "correct": false },
+            { "text": "la troponine hypersensible", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Mr A. âgé de 37 ans, tabagique, consulte pour douleur thoracique persistante depuis 2 heures. L’ECG révèle un sus décalage ST en antérieur associé à un sous décalage ST en inférieur. Quels sont vos examens complémentaires indispensable à réaliser avant transfert en coronarographie ?",
+        "options": [
+            { "text": "NFS groupe rhésus", "correct": false },
+            { "text": "Troponine", "correct": false },
+            { "text": "Aucun des examens cités", "correct": true },
+            { "text": "Echographie cardiaque trans-thoracique", "correct": false },
+            { "text": "Radiographie de thorax", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Concernant la douleur thoracique aux urgences, quelles sont les propositions vraies parmi les suivantes?",
+        "options": [
+            { "text": "L’embolie pulmonaire avec état de choc est aussi fréquente que le SCA ST+", "correct": false },
+            { "text": "Une élévation de troponine hypersensible est synonyme de IDM par obstruction coronarienne", "correct": false },
+            { "text": "La douleur thoracique n'est pas toujours présente en cas de tamponnade", "correct": true },
+            { "text": "La péricardite sèche est asymptomatique", "correct": false },
+            { "text": "La prévalence du SCA en cas de douleur thoracique aux urgences est de 1/3 des cas", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Quelles sont les caractéristiques de la dissection aortique ?",
+        "options": [
+            { "text": "La douleur thoracique est toujours présente", "correct": false },
+            { "text": "Le traitement des dissections de l’aorte descendante (type B de Stanford) est le plus souvent chirurgical", "correct": false },
+            { "text": "L’insuffisance aortique est présente dans 95% des cas", "correct": false },
+            { "text": "La sensibilité de l’IRM dans le diagnostic de dissection de l’aorte est d’environ 100 %", "correct": true },
+            { "text": "Toutes les propositions précédentes sont fausses", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Un coeur pulmonaire aigu à l'échocardiographie est défini par :",
+        "options": [
+            { "text": "la présence d'une dilatation ventriculaire droite", "correct": true },
+            { "text": "la présence d'un septum paradoxal", "correct": true },
+            { "text": "la présence d'une dilatation ventriculaire gauche", "correct": false },
+            { "text": "la présence d'une dysfonction ventriculaire gauche sévère", "correct": false },
+            { "text": "la présence d'une insuffisance aortique sévère", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Concernant les douleurs abdominales, indiquer la ou les propositions exacte(s) :",
+        "options": [
+            { "text": "Une hématurie microscopique est observée dans plus de 10% des anévrysmes en voie de rupture", "correct": true },
+            { "text": "L’ECG est généralement indiqué en cas de douleur sous mésocolique", "correct": false },
+            { "text": "L’échographie donne de meilleurs résultats que le scanner pour la localisation d’une lithiase rénale", "correct": false },
+            { "text": "Le scanner est plus performant que l’échographie pour la lithiase biliaire", "correct": false },
+            { "text": "Devant un tableau de colique néphrétique, le malade doit avoir systématiquement une échographie ou un scanner aux urgences", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Concernant l’imagerie dans les douleurs abdominales, indiquer la ou les propositions exactes ?",
+        "options": [
+            { "text": "Le scanner doit être injecté pour rechercher un pneumopéritoine", "correct": false },
+            { "text": "L’injection du scanner est formellement contre indiquée en cas d’insuffisance rénale", "correct": false },
+            { "text": "L’échographie doit être privilégiée chez la femme en âge de procréer si on suspecte une appendicite", "correct": true },
+            { "text": "Le pneumopéritoine implique une intervention chirurgicale", "correct": false },
+            { "text": "Le scanner est l’examen de référence en cas de diverticulite aiguë", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Parmi les examens biologiques suivants, quels sont ceux qui ont une sensibilité supérieure à 90% ?",
+        "options": [
+            { "text": "La polynucléose dans l’appendicite", "correct": false },
+            { "text": "L’augmentation de la CRP dans l’appendicite", "correct": false },
+            { "text": "L’augmentation de la lipasémie dans la pancréatite aiguë", "correct": true },
+            { "text": "L’hématurie microscopique dans la colique néphrétique", "correct": true },
+            { "text": "L’augmentation des lactates veineux dans l’occlusion par bride", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Quelles sont les propositions vraies concernant les douleurs abdominales aiguës ?",
+        "options": [
+            { "text": "La prévalence des causes chirurgicales est plus élevée chez le sujet jeune que chez le sujet âgé", "correct": false },
+            { "text": "Le fait que des vomissements précèdent la douleur abdominales est un élément en faveur d’une cause chirurgicale", "correct": false },
+            { "text": "Une colique hépatique s'associe toujours d'une infection vésiculaire", "correct": false },
+            { "text": "Une colique néphrétique gauche doit faire évoquer une complication d'un anévrisme de l'aorte chez le sujet ayant des facteurs de risque cardio-vasculaire et n’ayant jamais fait de colique néphrétique auparavant", "correct": true },
+            { "text": "Un diabète décompensé (acido-cétose) peut faire consulter au urgences pour le motif de douleurs abdominales", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Quelles sont, parmi les situations suivantes, celles qui ont une indication de scanner abdominopelvien avec injection de produit de contraste pour poser le diagnostic?",
+        "options": [
+            { "text": "Suspicion d'appendicite", "correct": true },
+            { "text": "Suspicion d'occlusion", "correct": true },
+            { "text": "Hémorragie digestive", "correct": false },
+            { "text": "Pancréatite aiguë", "correct": false },
+            { "text": "Fécalome", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Concernant les traumatismes crâniens graves, quelles sont la(les) proposition(s) vraie(s) ?",
+        "options": [
+            { "text": "Le score de Glasgow est le seul facteur lié à la gravité", "correct": false },
+            { "text": "Le score moteur du score de Glasgow est le mieux corrélé à la mortalité", "correct": true },
+            { "text": "Le doppler trans-crânien est intéressant pour évaluer la gravité du patient. Il permet de rechercher une baisse de la pression de perfusion cérébrale (PPC) via une baisse de l’index de pulsatilité (IP)", "correct": false },
+            { "text": "La gravité d’un traumatisme crânien est uniquement définie par le mécanisme ayant conduit à celui-ci (chute de hauteur, AVP haute cinétique, rixe …) et les symptômes (vomissements, céphalées, amnésie…)", "correct": false },
+            { "text": "L’hypotension artérielle est un facteur de mortalité. Ainsi on vise une PAS > 80 mmHg et une PAM > 110 mmHg (Faux : c’est l’inverse)", "correct": false }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Concernant les traumatismes pelviens graves, quelles sont les propositions vraies ?",
+        "options": [
+            { "text": "La mortalité est en premier lieu liée aux lésions extra-pelviennes associées", "correct": false },
+            { "text": "Un patient hémodynamiquement instable doit bénéficier d’un angioscanner abdominopelvien d’emblée afin d’identifier la lésion responsable et discuter une artério-embolisation", "correct": false },
+            { "text": "L’intérêt de la FAST échographie est d’éliminer un hématome rétro-péritonéale dont la présence signe une lésion potentiellement grave", "correct": false },
+            { "text": "Un traumatisme de bassin ouvert est un facteur de gravité indépendant", "correct": true },
+            { "text": "Une fracture en « open book » est significativement plus souvent associée à des lésions vasculaires hémorragiques", "correct": true }
+        ]
+    },
+    {
+        "category": "CRITERES DE GRAVITE",
+        "text": "Quels sont les critères de gravité face à un traumatisme thoracique ?",
+        "options": [
+            { "text": "Âge > 65 ans", "correct": true },
+            { "text": "Prise de traitement anticoagulant", "correct": true },
+            { "text": "Le mécanisme : traumatisme thoracique fermé", "correct": false },
+            { "text": "SpO2<95% malgré une oxygénothérapie", "correct": true },
+            { "text": "L’existence d’au moins 1 fracture de côte (Faux :au moins 2 côtes de fracturées)", "correct": false }
+        ]
+    },
+    {
+        "category": "VOIES ABORD",
+        "text": "Le recours à l'échographie est, pour la mise en place d'un abord vasculaire en urgence :",
+        "options": [
+            { "text": "obligatoire pour toute voie veineuse centrale chez l'enfant", "correct": true },
+            { "text": "conseillé pour toute voie artérielle chez l'adulte", "correct": true },
+            { "text": "conseillé pour toute voie intra-osseuse chez l'enfant", "correct": false },
+            { "text": "obligatoire pour toute voie veineuse périphérique chez l'adulte", "correct": false },
+            { "text": "obligatoire pour toute voie veineuse centrale chez l'adulte", "correct": true }
+        ]
+    },
+    {
+        "category": "VOIES ABORD",
+        "text": "En urgence, chez l'adulte, lorsqu'un abord veineux est nécessaire, il convient de privilégier, en première intention :",
+        "options": [
+            { "text": "l'abord veineux intra-cardiaque", "correct": false },
+            { "text": "l'abord veineux périphérique", "correct": true },
+            { "text": "l'abord veineux intra-osseux", "correct": false },
+            { "text": "l'abord veineux central", "correct": false },
+            { "text": "l'abord intramusculaire", "correct": false }
+        ]
+    },
+    {
+        "category": "VOIES ABORD",
+        "text": "L'usage d'une voie intra-osseuse mise en place en urgence chez un adulte :",
+        "options": [
+            { "text": "permet l'administration d'une fibrinolyse", "correct": true },
+            { "text": "requiert l'utilisation d'une contre-pression", "correct": true },
+            { "text": "doit-être précédée de l'injection d'un bolus de soluté", "correct": true },
+            { "text": "débute volontiers par l'injection d'un anesthésique", "correct": true },
+            { "text": "interdit l'usage de certaines catécholamines", "correct": false }
+        ]
+    },
+    {
+        "category": "VOIES ABORD",
+        "text": "Quels sites peuvent être utilisés pour un abord veineux intra-osseux en urgence chez l'adulte :",
+        "options": [
+            { "text": "fémoral proximal", "correct": false },
+            { "text": "huméral proximal", "correct": true },
+            { "text": "fémoral distal", "correct": true },
+            { "text": "tibial distal", "correct": true },
+            { "text": "huméral distal", "correct": false }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "A propos de la ventilation manuelle au masque, dans le cadre d'un ACR :",
+        "options": [
+            { "text": "La fréquence d'insufflation idéale est de 15 par minutes", "correct": false },
+            { "text": "Le volume d'insufflation idéal est de l'ordre de 1000-1500mL", "correct": false },
+            { "text": "Le volume d'insufflation idéal est de 400-500mL", "correct": true },
+            { "text": "La fréquence d'insufflation idéale est de 10 par minutes", "correct": true },
+            { "text": "La fréquence d'insufflation idéale est de 2 par cycle de 30 compressions thoraciques", "correct": true }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "A propos de l'oxygène thérapeutique",
+        "options": [
+            { "text": "Il peut augmenter la résistance des voies aériennes", "correct": true },
+            { "text": "L'augmentation de la résistance des voies aériennes est lié à la température et l'hygrométrie des gazs muraux, entraînant vaso et bronchoconstriction, en plus d'assécher les sécrétions des muqueuses.", "correct": true },
+            { "text": "Il induit toujours une hypercapnie", "correct": false },
+            { "text": "Il n'entraîne aucune complication", "correct": false },
+            { "text": "Il a pour objectif d'augmenter la concentration en oxygène alvéolaire", "correct": true },
+            { "text": "C'est un traitement curatif de l'insuffisance respiratoire aiguë", "correct": false }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "La manoeuvre de Heimlich",
+        "options": [
+            { "text": "est réalisable chez la femme enceinte", "correct": true },
+            { "text": "est réalisable en cas d'obstruction complète ou incomplète", "correct": false },
+            { "text": "est réalisable en cas d'arrêt cardiorespiratoire", "correct": false },
+            { "text": "est une manœuvre permettant de diminuer brutalement le volume de la cage thoracique", "correct": true },
+            { "text": "mobilise un corps étranger en augmentant la pression intrathoracique", "correct": true }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "Quels sont les contre-indications à la ventilation au masque ?",
+        "options": [
+            { "text": "Persistance d'un corps étranger dans les voies aériennes", "correct": true },
+            { "text": "Absence d'arrêt cardiaque", "correct": false },
+            { "text": "Persistance d'une activité circulatoire", "correct": false },
+            { "text": "Persistance d'une activité ventilatoire", "correct": true },
+            { "text": "Patient inconscient", "correct": false }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "Mise en place d'une séance de VNI",
+        "options": [
+            { "text": "Les triggers sont importants quelque soit les indications", "correct": true },
+            { "text": "Les réglages initiaux doivent être maximalistes d'emblé", "correct": false },
+            { "text": "La réévaluation dépend de l'indication", "correct": true },
+            { "text": "Les réglages dépendent de l'indication", "correct": true },
+            { "text": "Ne nécessite pas le médecin sénior", "correct": false }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "Oxygénothérapie à haut débit nasal",
+        "options": [
+            { "text": "Présente comme avantage une humidification et un réchauffement des gaz inspirés", "correct": true },
+            { "text": "Son application nécessite une protocolisation", "correct": true },
+            { "text": "Un des intérêts est de se rapprocher de la demande du patient en débit inspiratoire", "correct": true },
+            { "text": "Vrai, le débit inspiratoire d'un patient en détresse dépasse largement les 15 litres d'un masque à haute concentration.", "correct": true },
+            { "text": "Une des indications est la pneumopathie", "correct": true },
+            { "text": "Les indications de cette technique sont les mêmes que la VNI classique", "correct": false }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "Quelles sont les indications recommandées pour la VNI ?",
+        "options": [
+            { "text": "Pneumopathie", "correct": false },
+            { "text": "Insuffisance cardiaque en détresse respiratoire et hémodynamique", "correct": false },
+            { "text": "Œdème aigue du poumon", "correct": true },
+            { "text": "Bronchopneumopathie chronique obstructive en décompensation hypercapnique", "correct": true },
+            { "text": "Trouble ventilatoire à type d'atélectasie", "correct": false }
+        ]
+    },
+    {
+        "category": "VENTILATION",
+        "text": "Concernant la manipulation laryngée externe appelée BURP :",
+        "options": [
+            { "text": "Elle est contre indiquée chez la femme enceinte", "correct": false },
+            { "text": "Elle a pour objectif de diminuer le risque d’inhalation", "correct": false },
+            { "text": "C’est une manipulation du cartilage thyroïde", "correct": true },
+            { "text": "C’est une pression exercée de l’avant vers l’arrière, vers le haut et vers la droite du patient", "correct": true },
+            { "text": "Elle permet de faciliter l’intubation en cas de vision difficile de l’orifice laryngé", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant l’intubation dite en séquence rapide :",
+        "options": [
+            { "text": "Elle est réalisée avec l’association : hypnotique-curare-morphinique", "correct": false },
+            { "text": "Le curare est injecté 1 minute avant l’hypnotique", "correct": false },
+            { "text": "Le curare recommandé en cas de contre indication à la succinylcholine est le tracrium", "correct": false },
+            { "text": "La posologie de succinylcholine est de 1mg/kg du poids idéal", "correct": false },
+            { "text": "La kétamine peut être utilisée comme hypnotique à la posologie de 2 à 3mg/kg", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "En médecine d’urgence parmi les critères prédictifs d’une intubation difficile, on retrouve :",
+        "options": [
+            { "text": "L’arrêt cardiaque comme indication d’intubation", "correct": false },
+            { "text": "L’antécédent de néoplasie ORL", "correct": true },
+            { "text": "L’âge supérieur à 75 ans", "correct": false },
+            { "text": "L’antécédent d’asthme", "correct": false },
+            { "text": "L’obésité", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Les principaux risques encourus lors d'une intubation en situation d’urgences sont :",
+        "options": [
+            { "text": "Le risque de survenue d’un pneumothorax", "correct": false },
+            { "text": "Le risque d’inhalation pulmonaire", "correct": true },
+            { "text": "Le risque de survenue d’un syndrome coronarien aiguë au décours", "correct": false },
+            { "text": "Le risque de désaturation artérielle profonde", "correct": true },
+            { "text": "Le risque de bris dentaire", "correct": false }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant la capnographie :",
+        "options": [
+            { "text": "Elle n’est pas utile chez l’enfant", "correct": false },
+            { "text": "Elle permet de vérifier le caractère endotrachéal de l’intubation", "correct": true },
+            { "text": "Il faut visualiser au moins 4 à 5 cycles de CO2 expiré pour affirmer l’intubation trachéale", "correct": true },
+            { "text": "Elle permet de dépister une intubation sélective", "correct": true },
+            { "text": "Elle consiste à mesurer le taux de CO2 inspiré", "correct": false }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Quels gestes peuvent bénéficier d’une sédation procédurale aux urgences ?",
+        "options": [
+            { "text": "Exploration de plaies par l’urgentiste", "correct": true },
+            { "text": "Drainage pleural par l’urgentiste", "correct": true },
+            { "text": "Incision d’abcès réalisée par l’interne de chirurgie", "correct": false },
+            { "text": "Réduction de fractures réalisée par l’urgentiste", "correct": true },
+            { "text": "Cardioversion", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "En cas de sédation procédurale, les éléments de surveillance suivants doivent être systématiques :",
+        "options": [
+            { "text": "Température", "correct": false },
+            { "text": "Scope", "correct": true },
+            { "text": "Capnographie", "correct": false },
+            { "text": "Oxymétrie de pouls", "correct": true },
+            { "text": "Mesure régulière du dextro", "correct": false }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant les agents utilisables pour une sédation procédurale :",
+        "options": [
+            { "text": "L’antécédent d’asthme est une contre-indication à l’utilisation de la kétamine", "correct": false },
+            { "text": "Le protoxyde d’azote permet la réalisation de tous les gestes douloureux aux urgences", "correct": false },
+            { "text": "Le thiopental peut être utilisé à la posologie de 2mg/kg", "correct": false },
+            { "text": "L’utilisation de l’hypnomidate est souvent associée à des myoclonies", "correct": true },
+            { "text": "En cas d’utilisation de la kétamine la posologie varie de 0,1 à 0,15 mg/kg", "correct": false }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant l’utilisation du Propofol dans le cadre de la sédation procédurale aux urgences :",
+        "options": [
+            { "text": "Les réinjection si elles sont nécessaires sont de 0,1 mg/kg", "correct": false },
+            { "text": "Il peut être utilisé en association avec l’hypnomidate", "correct": false },
+            { "text": "Il peut être utilisé en association avec la kétamine", "correct": false },
+            { "text": "Le bolus initial est de 0.5 à 1mg/kg", "correct": true },
+            { "text": "Le bolus initial est de 10 mg", "correct": false }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant l’utilisation de la Kétamine dans le cadre de la sédation procédurale :",
+        "options": [
+            { "text": "La posologie est de 2 à 3 mg/kg", "correct": false },
+            { "text": "Les phénomènes psychodysleptiques post sédation peuvent être prévenus par l’utilisation de neuroleptiques à faibles doses", "correct": false },
+            { "text": "Les phénomènes d’agitation post sédation sont exceptionnels", "correct": false },
+            { "text": "Ses principaux effets secondaires sont hémodynamiques", "correct": false },
+            { "text": "Les phénomènes psychodysleptiques post sédation peuvent être prévenus par l’utilisation de benzodiazépines à faibles doses", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant les différentes techniques d’anesthésie locorégionales utilisables en structures d’urgences :",
+        "options": [
+            { "text": "Le bloc du nerf tibial permet une anesthésie de la plante du pied", "correct": true },
+            { "text": "Le bloc de la gaine des fléchisseurs doit remplacer l’anesthésie en bague des nerfs collatéraux des doigts", "correct": true },
+            { "text": "En cas de fracture de la diaphyse fémorale, le bloc du nerf sciatique est la technique à privilégier", "correct": false },
+            { "text": "Au poignet seul le bloc du nerf médian est réalisable", "correct": false },
+            { "text": "Un bloc du nerf radial est possible au niveau du coude", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant l’anesthésie locale de la face :",
+        "options": [
+            { "text": "L’innervation sensitive de la face dépend du nerf facial (VII)", "correct": false },
+            { "text": "La zone d’anesthésie correspondant au bloc du nerf supra orbitaire concerne l’hémi-front", "correct": true },
+            { "text": "La zone d’anesthésie du bloc infra orbitaire correspond à la joue, la paupière inférieure, l’aile du nez et la lèvre supérieure", "correct": true },
+            { "text": "La zone anesthésiée par le bloc du nerf mentonnier correspond uniquement au menton", "correct": false },
+            { "text": "Le repérage du point d’injection pour la réalisation d’un bloc du nerf supra orbitaire se fait par neurostimulation", "correct": false }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant les anesthésiques locaux :",
+        "options": [
+            { "text": "Leur absorption systémique est plus rapide au niveau du tronc qu’au niveau de la face", "correct": false },
+            { "text": "L’adjonction d’un vasodilatateur est recommandée pour augmenter la surface de la zone anesthésiée", "correct": false },
+            { "text": "Les AL sont éliminées majoritairement sous forme inchangée par le rein", "correct": false },
+            { "text": "L’adjonction d’adrénaline allonge la durée d’action des AL", "correct": true },
+            { "text": "La réaction allergique aux AL est une complication très rare de leur utilisation.", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Le repérage des sites d’injection des anesthésiques locaux lors de la réalisation d’une anesthésie loco-régionale peut se faire:",
+        "options": [
+            { "text": "Grâce uniquement à des repères anatomiques", "correct": true },
+            { "text": "Par la recherche de paresthésies", "correct": false },
+            { "text": "Par l’utilisation du doppler", "correct": false },
+            { "text": "Par l’utilisation de l’échographie", "correct": true },
+            { "text": "Par neurostimulation", "correct": true }
+        ]
+    },
+    {
+        "category": "ANESTHESIE",
+        "text": "Concernant les complications de l’anesthésie loco-régionale (ALR) aux urgences :",
+        "options": [
+            { "text": "La toxicité des anesthésiques locaux est essentiellement cardiaque et neurologique", "correct": true },
+            { "text": "Une sensation de goût métallique dans la bouche est un des premiers signes de passage systémique des anesthésiques locaux", "correct": true },
+            { "text": "Un test d’aspiration est systématiquement effectué en cas de réalisation d’une ALR", "correct": true },
+            { "text": "L’injection rapide des anesthésiques locaux diminue le risque de complications générales", "correct": false },
+            { "text": "L’administration d’une émulsion lipidique (Intralipide) est recommandé en cas d’accident cardiovasculaire dû à un passage systémique des anesthésiques locaux", "correct": true }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Concernant les immobilisations rigides, quelle(s) est(sont) la(les) proposition(s) vraie(s) ?",
+        "options": [
+            { "text": "Pour immobiliser un membre avec un œdème important il est préférable d'utiliser du plâtre.", "correct": true },
+            { "text": "Le trempage de la résine et du plâtre peut s'effectuer dans une eau chaude (>25°C).", "correct": false },
+            { "text": "Le plâtre assure un moulage plus précis que la résine", "correct": true },
+            { "text": "Le temps de séchage est plus rapide pour la résine", "correct": false },
+            { "text": "Le plâtre se rigidifie plus rapidement que la résine", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Concernant les immobilisations souples, quelle(s) est(sont) la(les) proposition(s) vraie(s) ?",
+        "options": [
+            { "text": "L'immobilisation type coude au corps permet d'immobiliser le membre supérieur avec : l'épaule en rotation interne, le coude en flexion à 90° et l'avant-bras en position neutre", "correct": true },
+            { "text": "Une syndactylie permet d'immobiliser la métacarpo-phalangienne", "correct": false },
+            { "text": "Les immobilisations souples sont réalisées seulement à l'aide de bande de contention", "correct": false },
+            { "text": "Toutes immobilisations souples peuvent être utilisées à visée antalgique.", "correct": true },
+            { "text": "Le strapping de la cheville en cas d'entorse bénigne assure une immobilisation complète.", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Concernant les positions de fonction des immobilisations, quelle(s) est(sont) la (les) réponses(s) correcte(s)?",
+        "options": [
+            { "text": "La manchette platrée doit laisser libre les métacarpo phalangiennes et la colonne du pouce.", "correct": true },
+            { "text": "Le coude doit être à 90° et prono-supination neutre.", "correct": true },
+            { "text": "Le poignet doit être à 0° et prono-supination neutre.", "correct": false },
+            { "text": "Le genou doit être en flexion de 20°.", "correct": true },
+            { "text": "La botte plâtrée doit s'arrêter au niveau de la tête fibulaire.", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "De quelle(s) complication(s) précoce(s) allez-vous informer vos patients si vous confectionnez une immobilisation circulaire et rigide du membre supérieur ?",
+        "options": [
+            { "text": "Compression cutanée à type d'escarre", "correct": true },
+            { "text": "Syndrome des loges", "correct": true },
+            { "text": "Maladie thrombo-embolique veineuse", "correct": false },
+            { "text": "Cal vicieux", "correct": false },
+            { "text": "Déplacement secondaire", "correct": true }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Quelle(s) est(sont) la (les) règle(s) à respecter pour toutes immobilisations rigides circulaires?",
+        "options": [
+            { "text": "Les extrémités des immobilisations rigides ne nécessitent pas de soins particuliers.", "correct": false },
+            { "text": "La bande doit être posée sans être tendue.", "correct": true },
+            { "text": "Respecter les positions fonctionnelles des articulations", "correct": true },
+            { "text": "Bloquer les articulations et segments sus et sous-jacents pour immobiliser respectivement une diaphyse et/ou une articulation", "correct": true },
+            { "text": "Toujours appliquer sur une extrémité réduite et bien axée", "correct": true }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "De garde au SMUR vous vous présentez avant les premiers secours sur les lieux d’un Accident de la Voie Publique. Le conducteur a été éjecté à proximité du véhicule qui est sur le toit, le véhicule commence à s’embraser. Vous décidez d’effectuer une extraction d’Urgence. Quelles sont les techniques adaptées ?",
+        "options": [
+            { "text": "Traction par les chevilles", "correct": false },
+            { "text": "Traction par poignet et cheville homolatéraux", "correct": false },
+            { "text": "Traction par les poignets", "correct": true },
+            { "text": "Traction sous les aisselles", "correct": true },
+            { "text": "Traction par les vêtements au niveau des épaules", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Médecin SMUR de garde le soir du Bataclan. Au poste médical avancé rue Oberkampf, un patient, en ventilation spontanée, présente une plaie par balle au niveau de la mandibule/massif facial inférieur. Que faites vous avant son transfert en milieu hospitalier ?",
+        "options": [
+            { "text": "Une antalgie par morphinique", "correct": true },
+            { "text": "Attente en position assise ante-flexion", "correct": true },
+            { "text": "Une Intubation naso-trachéale", "correct": false },
+            { "text": "Pose d’une canule de Guedel pour pouvoir le mettre en décubitus", "correct": false },
+            { "text": "Attente en position demi assise", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "En SMUR vous vous présentez avant les pompiers sur un accident : deux ouvriers électrisés inconscients au sol, dont un en ACR . Quelle est la première des actions à réaliser ?",
+        "options": [
+            { "text": "Couper l’alimentation électrique", "correct": true },
+            { "text": "Réaliser une extraction d’Urgence du patient en Ventilation spontanée", "correct": false },
+            { "text": "Appeler les Pompiers/18 pour vérifier qu’ils sont déclenchés", "correct": false },
+            { "text": "Réaliser un MCE pour le patient 1 et mettre le patient 2 en PLS", "correct": false },
+            { "text": "Recherche des points d’entrée et de sortie du courant électrique", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Parmi ces luxations lesquelles peuvent être réduite par un urgentiste en première intention ?",
+        "options": [
+            { "text": "Luxation postérieure", "correct": false },
+            { "text": "Luxation antérieure", "correct": true },
+            { "text": "Luxation avec fracture de la tête humérale", "correct": false },
+            { "text": "Luxation erecta", "correct": false },
+            { "text": "Luxation datant de plus de 24 heures", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Parmi les propositions suivantes, lesquelles sont indispensables à la réduction d’une luxation d’épaule correctement réalisée ?",
+        "options": [
+            { "text": "Radiographie pré et post réduction", "correct": true },
+            { "text": "Le choix de la technique de réduction dépend de la force qu’est capable d’exercer le praticien", "correct": false },
+            { "text": "Le choix de la technique de réduction dépend des habitudes de l’urgentiste", "correct": true },
+            { "text": "Le choix de la technique de réduction est extrêmement important, le critère le plus important est que la technique doit être douce, une réduction n’est pas un bras de fer avec le patient.", "correct": true },
+            { "text": "Analgésie", "correct": true },
+            { "text": "Sédation", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Quelle technique de réduction est appropriée pour réduire une luxation de cheville ?",
+        "options": [
+            { "text": "Accentuation de la luxation puis rechaussement de l’articulation luxée", "correct": false },
+            { "text": "Manœuvre de l’arrache botte", "correct": true },
+            { "text": "Technique de Kocher", "correct": false },
+            { "text": "Technique de Milch", "correct": false },
+            { "text": "Technique de la chaise", "correct": false }
+        ]
+    },
+    {
+        "category": "TRAUMATOLOGIE",
+        "text": "Parmi ces luxations, lesquelles peuvent être réduite sans radiographie ?",
+        "options": [
+            { "text": "Epaule", "correct": false },
+            { "text": "Coude", "correct": false },
+            { "text": "Genou", "correct": true },
+            { "text": "Doigt", "correct": false },
+            { "text": "Cheville", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Coupe échographique et mesure de la veine cave inférieure :",
+        "options": [
+            { "text": "il est indispensable de visualiser l'abouchement de la veine cave inférieure dans l'oreillette droite", "correct": true },
+            { "text": "pour visualiser la VCI, la sonde échographique est placée de façon sagittale repère vers les pieds du patient", "correct": false },
+            { "text": "la coupe échographique permettant de visualiser la veine cave inférieure est obtenue à partir d'une coupe en zone sous costale", "correct": true },
+            { "text": "la mesure de la veine cave inférieure se réalise à l'aide du mode TM à 5 centimètres de l'abouchement dans l'oreillette droite", "correct": false },
+            { "text": "la mesure de la veine cave inférieure nécessite que la ligne de tir soit perpendiculaire à cette dernière", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Etude de la veine cave inférieure en échographie cardiaque :",
+        "options": [
+            { "text": "l'étude de la veine cave inférieure est uniquement basée sur la mesure de son plus grand diamètre", "correct": false },
+            { "text": "un intérêt de l'étude de la variabilité respiratoire de la VCI est l'étude la précharge dépendance", "correct": true },
+            { "text": "la formule permettant de mesurer la variabilité respiratoire de la VCI est : (max-min) / max", "correct": false },
+            { "text": "la mesure de la variabilité respiratoire est identique que le patient soit en ventilation spontanée ou en ventilation mécanique", "correct": false },
+            { "text": "l'étude de la variabilité respiratoire de la veine cave inférieure peut être réalisée de façon visuelle", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Etude la veine cave inférieure en échographie cardiaque :",
+        "options": [
+            { "text": "Chez un patient hypotendu en ventilation spontanée, un collapsus inspiratoire de la VCI est un signe que le patient est précharge dépendant", "correct": true },
+            { "text": "La variabilité de la veine cave inférieure est un très bon critère de précharge dépendance en ventilation mécanique", "correct": false },
+            { "text": "La VCI se comporte de la même façon en ventilation spontanée et en ventilation mécanique", "correct": false },
+            { "text": "En ventilation spontanée le cut-off de la variabilité respiratoire de la VCI est de 40%", "correct": true },
+            { "text": "La variabilité de la VCI en ventilation spontanée est un bon critère de précharge dépendance", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Chez un patient présentant une douleur thoracique suspect de péricardite, à qui vous réalisez une échographie cardiaque trans-thoracique :",
+        "options": [
+            { "text": "la coupe sous-costale est une coupe de référence", "correct": true },
+            { "text": "l’absence d’épanchement péricardique élimine le diagnostic", "correct": false },
+            { "text": "en parasternale, il est visualisé entre le péricarde et l’aorte thoracique descendante", "correct": true },
+            { "text": "en cas de tamponnade, les cavités droites sont comprimées", "correct": true },
+            { "text": "l’épanchement est habituellement abondant", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Chez un patient suspect de dissection aortique chez qui vous réalisez une échographie cardiaque trans thoracique :",
+        "options": [
+            { "text": "en l’absence de flap intimal, le diagnostic est exclu", "correct": false },
+            { "text": "un épanchement pleural gauche peut être un signe de complication", "correct": true },
+            { "text": "La présence d’un épanchement péricardique élimine le diagnostic", "correct": false },
+            { "text": "La constatation d’une insuffisance aortique aiguë est un argument important en faveur", "correct": true },
+            { "text": "la constatation d’une image mobile dans la racine de l’aorte évoque fortement le diagnostic", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Les signes échographiques à rechercher lors d’une suspicion de syndrome aortique aigu sont :",
+        "options": [
+            { "text": "un épanchement péricardique", "correct": true },
+            { "text": "un épanchement pleural gauche", "correct": true },
+            { "text": "une dilatation de l’aorte", "correct": true },
+            { "text": "une fuite tricuspidienne", "correct": false },
+            { "text": "un flap intimal", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Dans un état de choc, quels signes échocardiographiques sont en faveur d’une tamponnade cardiaque ?",
+        "options": [
+            { "text": "Des signes de compressions des cavités droites", "correct": true },
+            { "text": "Une veine cave inférieure collabée à l'inspiration", "correct": false },
+            { "text": "Un épanchement péricardique abondant", "correct": false },
+            { "text": "Un 'Swinging heart'", "correct": false },
+            { "text": "Une veine cave inférieure augmentée de diamètre", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quelles sont les propositions vraies concernant l'intérêt de l'échographie de compression veineuse et de l'échographie pulmonaire dans le diagnostic étiologique d'un état de choc ?",
+        "options": [
+            { "text": "Un patient présentant un état de choc secondaire à un pneumothorax compressif droit, n'aura aucun glissement pleural visible sur l'hémi-thorax droit", "correct": true },
+            { "text": "Une échographie de compression normale chez un patient en état de choc exclu une embolie pulmonaire grave", "correct": false },
+            { "text": "Un choc cardiogénique gauche aura un profil B à l'échographie pulmonaire", "correct": true },
+            { "text": "Une échographie de compression pathologique chez un patient en état de choc est très en faveur d'une embolie pulmonaire grave", "correct": true },
+            { "text": "Hors contexte traumatique, un épanchement pleural chez un patient en état de choc oriente vers une cause septique sur pneumopathie", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quels signes échocardiographiques orientent le diagnostic étiologique d'un état de choc vers un choc cardiogénique ?",
+        "options": [
+            { "text": "Une altération sévère de la fraction d'éjection du ventricule gauche pour un choc cardiogénique gauche", "correct": true },
+            { "text": "Une veine cave inférieure collabée à l'inspiration pour un choc cardiogénique droit", "correct": false },
+            { "text": "Un septum paradoxal pour un choc secondaire à un cœur pulmonaire aigu", "correct": true },
+            { "text": "Une dilatation majeure du ventricule droit pour un choc secondaire à un cœur pulmonaire aigu", "correct": true },
+            { "text": "Un signe du 'D' pour un choc cardiogénique gauche", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quels signes échocardiographiques orientent le diagnostic étiologique d'un état de choc vers une hypovolémie ?",
+        "options": [
+            { "text": "Un septum paradoxal", "correct": false },
+            { "text": "Une veine cave inférieure augmentée de diamètre", "correct": false },
+            { "text": "Un collapsus systolique du ventricule gauche", "correct": true },
+            { "text": "Une dilatation du ventricule droit", "correct": false },
+            { "text": "Une veine cave inférieure collabée à l'inspiration", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Coeur pulmonaire aigu (CPA) et diagnostics associés en échographie cardiaque",
+        "options": [
+            { "text": "l’absence de cœur pulmonaire aigu échographique vous permet d'éliminer un diagnostic d'embolie pulmonaire", "correct": false },
+            { "text": "vous pouvez envisager un traitement par thrombolyse en cas de cœur pulmonaire aigu chez un patient suspect d'embolie pulmonaire, en état de choc et pour lequel l’angioscanner est indisponible ou non envisageable", "correct": true },
+            { "text": "dans les embolies pulmonaires la dilatation du VD est linéairement corrélée à la mortalité", "correct": false },
+            { "text": "le CPA peut être révélateur d'une embolie pulmonaire ou d'une pneumopathie hypoxémiante", "correct": true },
+            { "text": "la dilatation du VD et le septum paradoxal ne sont présents qu'en situation pathologique aiguë", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Physiopathologie en échographie cardiaque",
+        "options": [
+            { "text": "le ventricule droit est un système à haute pression", "correct": false },
+            { "text": "le ventricule droit est considéré comme post charge sensible", "correct": true },
+            { "text": "en cas d augmentation de la post charge, le VD se dilate de façon rapide et transitoire", "correct": true },
+            { "text": "le cœur pulmonaire aigu est considéré comme une surpression au niveau du VD", "correct": true },
+            { "text": "le cœur pulmonaire aigu se traduit uniquement par une dilatation du VD en diastole", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Concernant l'orientation des coupes en échocardiographie cardiaque trans thoracique",
+        "options": [
+            { "text": "En coupe parasternale grand axe, le ventricule droit apparaît plus superficiel que le ventricule gauche", "correct": true },
+            { "text": "En échocardiographie, il apparaît sur la gauche de l'écran ce qui est visible du côté du marqueur de la sonde", "correct": false },
+            { "text": "En coupe apicale 4 cavités, le ventricule gauche apparaît à droite de l'écran", "correct": true },
+            { "text": "En coupe sous xiphoïdienne 4 cavités, le ventricule droit apparaît plus superficiel que le ventricule gauche", "correct": true },
+            { "text": "En coupe parasternale petit axe, le ventricule droit apparaît plus superficiel que le ventricule gauche", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Coupes pertinentes pour juger des objectifs de base en échocardiographie",
+        "options": [
+            { "text": "Pour juger de la présence d'un épanchement péricardique, la coupe parasternale grand axe est pertinente", "correct": true },
+            { "text": "Pour juger de la présence d'un épanchement péricardique, la coupe sous xiphoïdienne 4 cavités est pertinente", "correct": true },
+            { "text": "La coupe sous xiphoïdienne 4 cavités peut permettre de juger des 4 objectifs de base en échocardiographie", "correct": false },
+            { "text": "Pour juger visuellement de la fraction d'éjection du ventricule gauche, toutes les coupes de bases peuvent être pertinentes", "correct": true },
+            { "text": "Pour juger de la présence d'une dilatation majeure du VD, la coupe parasternale grand axe est pertinente", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "La coupe échographique parasternale gauche grand axe permet d’observer :",
+        "options": [
+            { "text": "la racine de l’aorte ascendante", "correct": true },
+            { "text": "le tronc brachio-céphalique", "correct": false },
+            { "text": "l’isthme aortique", "correct": false },
+            { "text": "la section transversale de l’aorte descendante inférieure", "correct": true },
+            { "text": "la valve mitrale", "correct": true },
+            { "text": "le sinus de valsalva", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quels sont les critères de qualité des coupes de bases d’échocardiographie cardiaque trans thoracique :",
+        "options": [
+            { "text": "En coupe apicale 4 cavités, les valves mitrales et tricuspides doivent être visible dans le même plan", "correct": true },
+            { "text": "Sur la coupe de la veine cave inférieure, on ne voit pas de cavité cardiaque", "correct": false },
+            { "text": "En coupe sous xiphoïdienne 4 cavités, les valves mitrales et tricuspides doivent être visible dans le même plan", "correct": true },
+            { "text": "En coupe parasternale petit axe, on doit visualiser les deux piliers de la valve mitrale", "correct": true },
+            { "text": "En coupe parasternale grand axe, la seule partie de l'aorte visible est le début de l'aorte thoracique ascendante", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Algorithme échographique en cas de détresse respiratoire aiguë (DRA)",
+        "options": [
+            { "text": "l’algorithme échographique de la DRA est basée sur l'échographie pleuro-pulmonaire, l'échographie cardiaque et l'échographie de compression des 4 points", "correct": true },
+            { "text": "l’échographie pleuro-pulmonaire permet le diagnostic d'exacerbation de BPCO", "correct": false },
+            { "text": "l'étude échographique n’est pas suffisante, une anamnèse complète et un examen clinique ciblé sont indispensables", "correct": true },
+            { "text": "l’algorithme échographique de la détresse respiratoire aigüe est essentiellement basée sur l’échographie cardiaque", "correct": false },
+            { "text": "le premier signe à rechercher est la présence d'un glissement pleural", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quels sont les propositions vraies concernant l'algorithme échographique dans les détresses respiratoires aigues ?",
+        "options": [
+            { "text": "le syndrome de consolidation alvéolaire peut également être le témoin d'un OAP cardiogénique", "correct": false },
+            { "text": "le profil C correspond à la présence de lignes B sur un poumon et à un profil de type A sur le poumon controlatérale", "correct": true },
+            { "text": "le profil de type A peut être normal", "correct": true },
+            { "text": "le profil de type A peut témoigner d'une décompensation d'asthme ou de BPCO, d'une tamponnade ou d'une embolie pulmonaire", "correct": true },
+            { "text": "le profil de type B est en général le témoin d un OAP", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quels sont les propositions vraies concernant l’algorithme échographique dans les détresses respiratoires aigues ?",
+        "options": [
+            { "text": "l’absence de glissement pleural peut correspondre à une pneumonie", "correct": true },
+            { "text": "un profil de type B peut témoigner d’une pneumonie interstitielle ou d’un SDRA", "correct": true },
+            { "text": "en présence d un OAP, l’échographie pleuro-pulmonaire présente un profil de type A", "correct": false },
+            { "text": "le profil A est la seule situation ou le diagnostic de pneumonie n’est pas envisagé", "correct": false },
+            { "text": "l’absence de glissement pleural confirme avec certitude la présence d'un pneumothorax", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quelles sont les propositions touchant à l'échographie clinique d'urgence (ECU) qui sont présentent dans des recommandations françaises ?",
+        "options": [
+            { "text": "il y a des recommandations exigeant l’utilisation de l’échographie pulmonaire en préhospitalier", "correct": true },
+            { "text": "chaque ECU réalisée doit faire l'objet d'un compte rendu formalisé", "correct": false },
+            { "text": "il est recommandé que chaque unité mobile hospitalière du SMUR puisse disposer d’un échographe", "correct": true },
+            { "text": "il faut que chaque structure de médecine d’urgences dispose d’au moins un échographe", "correct": true },
+            { "text": "toute mise en place de cathéter veineux central doit être écho-guidé", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Quelles sont les propositions vraies concernant les principes de l'échographie clinique d'urgence (ECU) ?",
+        "options": [
+            { "text": "Les questions posées sont majoritairement à réponse binaire oui/non", "correct": true },
+            { "text": "Pour être considéré comme une échographie clinique, l'examen doit être réalisé par le médecin qui a interrogé et examiné le patient", "correct": true },
+            { "text": "Les techniques d'échoguidages ne font pas, à proprement parler, partie de l'échographie clinique", "correct": false },
+            { "text": "L'ECU est une échographie dite focalisée", "correct": true },
+            { "text": "L'intérêt principal de l'ECU est de changer l'hypothèse diagnostique principale du médecin urgentiste", "correct": false }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Chez le traumatisé grave en état de choc, l’échographie permet de visualiser la présence d’un épanchement sanguin :",
+        "options": [
+            { "text": "dans le péricarde (E-FAST)", "correct": true },
+            { "text": "dans le péritoine (E-FAST)", "correct": true },
+            { "text": "dans le rétropéritoine (E-FAST)", "correct": false },
+            { "text": "dans le crâne (DTC)", "correct": false },
+            { "text": "dans la plèvre (E-FAST)", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "L’échographie clinique permet en cas de multi-victimes :",
+        "options": [
+            { "text": "fait perdre du temps", "correct": false },
+            { "text": "de monitorer les UA1 s’il y a un délai d’évacuation", "correct": true },
+            { "text": "d’orienter les victimes vers les plateaux techniques adaptés à leur état", "correct": true },
+            { "text": "de prioriser les victimes le plus tôt possible pour l’évacuation", "correct": true },
+            { "text": "de trier les UA et les UR", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "L’échographie intégrée au damage control permet :",
+        "options": [
+            { "text": "d’affirmer l’existence d’un défaut majeur de perfusion cérébrale", "correct": true },
+            { "text": "de détecter un épanchement péricardique", "correct": true },
+            { "text": "d’aider à la pose d’une cricothyroïdotomie", "correct": true },
+            { "text": "d’affirmer une lésion splénique en cas d’hémopéritoine", "correct": false },
+            { "text": "de détecter un pneumothorax", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Un traumatisé grave :",
+        "options": [
+            { "text": "doit bénéficier d’un scanner corps entier", "correct": true },
+            { "text": "est toujours avec une hémodynamique instable", "correct": false },
+            { "text": "est un blessé ayant au moins 3 fractures", "correct": true },
+            { "text": "est idéalement orienté vers l’hôpital de proximité", "correct": false },
+            { "text": "est géré selon la doctrine du damage contrôle", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "Un traumatisé grave avec une défaillance vitale initiale :",
+        "options": [
+            { "text": "est pris en charge en second par la gestion des défaillances neurologiques", "correct": false },
+            { "text": "est évalué sur le plan hémodynamique par l’ITVSAo et le doppler tissulaire", "correct": false },
+            { "text": "est toujours initialement pris en charge par la recherche et le contrôle d’un saignement actif important", "correct": true },
+            { "text": "doit bénéficier au plus tôt d’une E-FAST", "correct": true },
+            { "text": "est pris en charge en premier par le contrôle des voies aériennes", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "La dilatation de l’aorte à l’échographie :",
+        "options": [
+            { "text": "est toujours de mesure sous-estimée par rapport à celle du scanner", "correct": true },
+            { "text": "est affirmée par le diamètre de la racine de l’aorte ascendante supérieur à 2,5 cm", "correct": false },
+            { "text": "est écarté en l’absence de fuite aortique", "correct": false },
+            { "text": "n’est jamais possible à diagnostiquer en cas d’aorte tortueuse", "correct": true },
+            { "text": "est affirmé en l’absence du parallélisme de ses bords", "correct": true }
+        ]
+    },
+    {
+        "category": "ECHOGRAPHIE",
+        "text": "L’exploration de l’aorte s’accompagne de l’exploration systématique :",
+        "options": [
+            { "text": "#REF!", "correct": false },
+            { "text": "des artères poplités", "correct": false },
+            { "text": "des artères carotides", "correct": true },
+            { "text": "des veines iliaques", "correct": false },
+            { "text": "des artères carotides", "correct": true }
+        ]
+    }  
 ];
 
 // ════════════════════════════════════════════════════
