@@ -537,42 +537,576 @@
 //  Ajoute tes questions ici en suivant le même format
 // ════════════════════════════════════════════════════
 const questionsData = [
-  {
-    category: "ORGANISATION EN MU",
-    text: "Concernant l'organisation de la salle des urgences vitales (SAUV) au sein d'une structure des urgences. Veuillez choisir au moins une réponse :",
-    options: [
-      { text: "Une infirmière doit être dédiée au fonctionnement propre de la SAUV", correct: false },
-      { text: "Tout le matériel de réanimation doit être présent dans une SAUV", correct: true },
-      { text: "La SAUV est dans un service d'urgence le lieu d'accueil des patients en détresse vitale potentielle", correct: true },
-      { text: "La SAUV est le lieu d'accueil des patients en détresse vitale existante", correct: true },
-      { text: "La Salle d'accueil des urgences vitales (SAUV) peut être située dans un autre service que celui des urgences", correct: false }
-    ]
-  },
-  {
-    category: "SEPSIS",
-    text: "Depuis 2016 et le consensus Sepsis-3, les cas suivants correspondent à la définition de sepsis :",
-    options: [
-      { text: "Une infection avec un qSOFA > 2", correct: true },
-      { text: "Une infection avec une insuffisance rénale aiguë sévère", correct: true },
-      { text: "Une infection avec une hypotension artérielle nécessitant l'introduction de vasopresseurs et une hyperlactatémie", correct: false },
-      { text: "Une infection associée à une hyperlactatémie", correct: false },
-      { text: "Une infection associée à une hypotension artérielle", correct: false }
-    ]
-  },
-  {
-    category: "SEPSIS",
-    text: "Quel est le remplissage vasculaire recommandé devant un choc septique ?",
-    options: [
-      { text: "30 ml/kg le plus vite possible", correct: false },
-      { text: "500 mL de colloïdes en 3 heures", correct: false },
-      { text: "Cristalloïdes équilibrés (Ringer lactate) ou sérum physiologique", correct: false },
-      { text: "1 litre de cristalloïdes en 1 h", correct: false },
-      { text: "30 ml/kg de cristalloïdes en 3 heures", correct: true }
-    ]
-  }
-  // ─────────────────────────────────────────────────
-  // 👇 AJOUTE TES QUESTIONS ICI (copie le bloc ci-dessus)
-  // ─────────────────────────────────────────────────
+    // ================= SEPSIS =================
+    {
+        category: "SEPSIS",
+        text: "Question 1 - Depuis 2016 et le consensus Sepsis-3, les cas suivants correspondent à la définition de sepsis.",
+        options: [
+            { text: "Une infection avec un qSOFA > 2", correct: false },
+            { text: "Une infection avec une insuffisance rénale aiguë sévère", correct: true },
+            { text: "Une infection avec une hypotension artérielle nécessitant l’introduction de vasopresseurs et une hyperlactatémie", correct: true },
+            { text: "Une infection associée à une hyperlactatémie", correct: false },
+            { text: "Une infection associée à une hypotension artérielle", correct: false }
+        ]
+    },
+    {
+        category: "SEPSIS",
+        text: "Question 2 - Lesquelles des variables suivantes font partie du score qSOFA ?",
+        options: [
+            { text: "Pression artérielle", correct: true },
+            { text: "Lactate", correct: false },
+            { text: "Score de Glasgow", correct: true },
+            { text: "Fréquence respiratoire", correct: true },
+            { text: "Fréquence cardiaque", correct: false }
+        ]
+    },
+    {
+        category: "SEPSIS",
+        text: "Question 3 - Quel est le remplissage vasculaire recommandé devant un choc septique ?",
+        options: [
+            { text: "30 ml/kg le plus vite possible", correct: false },
+            { text: "500 mL de colloïdes en 3 heures", correct: false },
+            { text: "Cristalloïdes équilibrés (Ringer lactate) ou sérum physiologique", correct: true },
+            { text: "1 litre de cristalloïdes en 1 h", correct: false },
+            { text: "30 ml/kg de cristalloïdes en 3 heures", correct: true }
+        ]
+    },
+    {
+        category: "SEPSIS",
+        text: "Question 4 - Face à un patient en sepsis, sans choc :",
+        options: [
+            { text: "Il faut confirmer l’origine infectieuse avant d’administrer des antibiotiques", correct: false },
+            { text: "Il faut toujours associer deux antibiotiques", correct: false },
+            { text: "Il faut administrer une antibiothérapie au plus vite, une fois les prélèvements faits", correct: true },
+            { text: "Sans étiologie évidente, une association C3G et aminoside est adaptée pour la suspicion d’infection communautaire", correct: true },
+            { text: "Il faut éviter les combinaisons si possible, en particulier devant une neutropénie", correct: true }
+        ]
+    },
+    {
+        category: "SEPSIS",
+        text: "Question 5 - En cas de choc septique :",
+        options: [
+            { text: "Il faut viser une pression artérielle moyenne de 65 mmHg", correct: true },
+            { text: "Il faut attendre 3 heures et la fin du remplissage recommandé avant de penser à administrer des amines", correct: false },
+            { text: "Il faut réévaluer la perfusion du malade dans les 6 heures via échocardiographie, contrôle du lactate et clinique", correct: true },
+            { text: "Il faut viser une pression artérielle systolique de 90 mmHg", correct: false },
+            { text: "La noradrénaline est l’amine de choix dans le choc septique", correct: true }
+        ]
+    },
+
+    // ================= HEMORRAGIE DIGESTIVE =================
+    {
+        category: "HEMORRAGIE DIGESTIVE",
+        text: "Question 1 - Concernant l'épidémiologie des hémorragies digestives, quelles sont les affirmations justes ?",
+        options: [
+            { text: "Une hémorragie du grêle est une hémorragie digestive haute", correct: false },
+            { text: "La cause principale d'hémorragie digestive est l'ulcère gastro-duodénal", correct: true },
+            { text: "Les hémorragies digestives liées à l'hypertension portale représentent plus de 10 % des hémorragies digestives hautes en France", correct: true },
+            { text: "Les diverticules coliques sont les premières causes d'hémorragie digestive basse en cas d'hémorragie abondante", correct: true },
+            { text: "La mortalité des hémorragies digestives basses est supérieure à celle des hémorragies hautes", correct: false }
+        ]
+    },
+    {
+        category: "HEMORRAGIE DIGESTIVE",
+        text: "Question 2 - Concernant les hémorragies digestives, quelles sont les affirmations justes ?",
+        options: [
+            { text: "Le choc initial est un facteur pronostique important", correct: true },
+            { text: "Une hémorragie abondante est toujours active et réciproquement", correct: false },
+            { text: "Les critères cliniques d'appréciation de l'abondance d'une hémorragie digestive sont spécifiques à ce type d'hémorragie", correct: false },
+            { text: "L'abondance d'une hémorragie s'apprécie initialement avant tout sur l'hémoglobinémie", correct: false },
+            { text: "Le terrain est un facteur pronostique majeur des hémorragies digestives", correct: true }
+        ]
+    },
+    {
+        category: "HEMORRAGIE DIGESTIVE",
+        text: "Question 3 - Concernant les hémorragies digestives, quelles sont les affirmations justes ?",
+        options: [
+            { text: "La mise en route du traitement vasoactif est indiquée le plus tôt possible en cas d'hémorragie liée à l'hypertension portale", correct: true },
+            { text: "La durée de traitement des IPP à forte dose est de 5 jours s'il s'agit d'un ulcère hémorragique", correct: false },
+            { text: "Une hémorragie par rupture de VO justifie la mise en route systématique d'un traitement antibiotique", correct: true },
+            { text: "Il est recommandé d'attendre les résultats de l'endoscopie pour poser l'indication des IPP à forte dose par voie IV", correct: false },
+            { text: "Un caillot adhérent sans hémorragie active est l'équivalent pronostique d'un ulcère avec tache hémorragique", correct: true }
+        ]
+    },
+    {
+        category: "HEMORRAGIE DIGESTIVE",
+        text: "Question 4 - Concernant la prise en charge des hémorragies digestives, quelles sont les affirmations justes ?",
+        options: [
+            { text: "Une voie veineuse centrale est justifiée en cas d'hémorragie abondante", correct: false },
+            { text: "L'endoscopie est recommandée dans les 12 premières heures en cas d'hémorragie a priori ulcéreuse", correct: false },
+            { text: "L'endoscopie est recommandée dans les 12 premières heures en cas d'hémorragie a priori variqueuse", correct: true },
+            { text: "Une transfusion doit être effectuée chez un insuffisant respiratoire si l'hémoglobinémie est inférieure à 10 g/100 mL", correct: false },
+            { text: "L'érythromycine est aussi efficace que les lavages gastriques pour préparer l'estomac à l'endoscopie", correct: true }
+        ]
+    },
+    {
+        category: "HEMORRAGIE DIGESTIVE",
+        text: "Question 5 - Concernant les hémorragies digestives basses, quelles sont les affirmations justes ?",
+        options: [
+            { text: "La coloscopie est effectuée au mieux après un wash-out (préparation colique intense)", correct: true },
+            { text: "La performance diagnostique du scanner est désormais supérieure à 80 %", correct: true },
+            { text: "La colite ischémique s'accompagne de douleurs abdominales", correct: true },
+            { text: "La diverticulose colique hémorragique s'accompagne de douleurs abdominales", correct: false },
+            { text: "L'artériographie est justifiée dans la plupart des échecs de la coloscopie à faire un diagnostic de l'origine du saignement", correct: false }
+        ]
+    },
+
+    // ================= ANAPHYLAXIE =================
+    {
+        category: "ANAPHYLAXIE",
+        text: "Question 1 - Concernant les traitements de l'exacerbation aiguë d'asthme",
+        options: [
+            { text: "Les corticoïdes sont administrés par voie inhalée", correct: false },
+            { text: "Les antibiotiques sont systématiques en cas de fièvre concomitante à la crise d'asthme", correct: false },
+            { text: "Les corticoïdes peuvent être administrés par voie orale", correct: true },
+            { text: "le sulfate de magnésium par voie inhalée peut être utilisé dans les formes sévères", correct: false },
+            { text: "Le salbutamol doit être administré par voie intraveineuse dès que le patient est hypercapnique", correct: false }
+        ]
+    },
+    {
+        category: "ANAPHYLAXIE",
+        text: "Question 2 - Concernant le diagnostic clinique de l'anaphylaxie",
+        options: [
+            { text: "Il s'agit d'une installation aiguë avec au moins une atteinte respiratoire ou une hypotension artérielle ou des signes de mauvaise perfusion", correct: true },
+            { text: "Les manifestations cutanéo-muqueuses ne constituent pas une anaphylaxie", correct: true },
+            { text: "Il s'agit d'une pathologie qui évolue lentement", correct: false },
+            { text: "Les critères cliniques sont définis par la classification de Ring et Messmer", correct: false },
+            { text: "On peut également parler d'anaphylaxie si au moins deux signes sont présents parmi atteinte cutanéo-muqueuse, atteinte respiratoire, hypotension artérielle, atteinte neurologique", correct: true }
+        ]
+    },
+    {
+        category: "ANAPHYLAXIE",
+        text: "Question 3 - La prise en charge thérapeutique d'un œdème de Quincke en préhospitalier consiste en :",
+        options: [
+            { text: "La grossesse contre-indique l'utilisation d'adrénaline", correct: false },
+            { text: "L'injection se fait sur la face interne de la cuisse", correct: true },
+            { text: "L’impossibilité d’utiliser le stylo auto-injectable à travers les vêtements", correct: false },
+            { text: "Appel du centre de réception et régulation des appels", correct: true },
+            { text: "Utilisation d'un stylo auto-injectable d'adrénaline par l'entourage", correct: true }
+        ]
+    },
+    {
+        category: "ANAPHYLAXIE",
+        text: "Question 4 - La prise en charge thérapeutique par le SMUR d'un choc anaphylactique consiste en :",
+        options: [
+            { text: "Dose unitaire maximale d'adrénaline 0,5 mg", correct: true },
+            { text: "L'adrénaline en IV a un effet arythmogène", correct: true },
+            { text: "Une seule injection d'adrénaline en IM", correct: false },
+            { text: "La voie IV peut être utilisée en cas d'ACR sur choc anaphylactique", correct: true },
+            { text: "Un relais d'adrénaline en IVSE est systématique", correct: false }
+        ]
+    },
+    {
+        category: "ANAPHYLAXIE",
+        text: "Question 5 - Concernant la physiopathologie de l'anaphylaxie",
+        options: [
+            { text: "Un seul contact avec l'allergène suffit à déclencher une réaction allergique", correct: false },
+            { text: "Il s'agit uniquement de mécanismes immunologiques", correct: false },
+            { text: "Il s'agit d'une réaction d'hypersensibilité à IgE", correct: true },
+            { text: "Après le contact avec l'allergène, la réaction allergique peut avoir lieu dans les minutes ou les heures qui suivent", correct: true },
+            { text: "La prise en charge initiale dépend du mécanisme physiopathologique", correct: false }
+        ]
+    },
+
+    // ================= SCA ST+ =================
+    {
+        category: "SCA ST+",
+        text: "Question 1 - L'ECG, en cas de douleur thoracique, doit :",
+        options: [
+            { text: "comporter 18 (ou 17) dérivations", correct: true },
+            { text: "être réalisé et interprété dans les 20 minutes après le premier contact médical", correct: false },
+            { text: "être comparé à un tracé antérieur pour affirmer le diagnostic de SCA ST +", correct: false },
+            { text: "être répété avant toute décision thérapeutique", correct: true }
+        ]
+    },
+    {
+        category: "SCA ST+",
+        text: "Question 2 - Une hémorragie cérébrale complique un traitement fibrinolytique (pour SCA ST +) dans environ :",
+        options: [
+            { text: "1 % des cas", correct: true },
+            { text: "3,5 % des cas", correct: false },
+            { text: "20 % des cas", correct: false },
+            { text: "5 % des cas", correct: false },
+            { text: "10 % des cas", correct: false }
+        ]
+    },
+    {
+        category: "SCA ST+",
+        text: "Question 3 - Concernant la mortalité de l'infarctus aigu du myocarde :",
+        options: [
+            { text: "est multipliée par 10-15 en cas de choc cardiogénique", correct: false },
+            { text: "est réduite par le traitement anticoagulant", correct: false },
+            { text: "est de l'ordre de 5 % dans la \"vraie vie\"", correct: true },
+            { text: "est en constante diminution depuis 20 ans", correct: true },
+            { text: "est réduite par le recours à la thrombolyse", correct: true }
+        ]
+    },
+    {
+        category: "SCA ST+",
+        text: "Question 4 - Le traitement idéal des SCA ST + comporte systématiquement (sauf contre-indication) :",
+        options: [
+            { text: "un antalgique morphinique", correct: false },
+            { text: "de l'oxygène", correct: false },
+            { text: "un anticoagulant", correct: true },
+            { text: "de l'aspirine", correct: true },
+            { text: "un second antiagrégant plaquettaire inhibiteur des P2Y12", correct: true }
+        ]
+    },
+    {
+        category: "SCA ST+",
+        text: "Question 5 - Chez un homme de 55 ans avec un SCA ST + antérieur à 90 minutes du début de la douleur (hors contre-indication à un traitement) :",
+        options: [
+            { text: "la fibrinolyse est une bonne option", correct: true },
+            { text: "l'angioplastie primaire est le seul traitement adapté", correct: true },
+            { text: "la fibrinolyse est proscrite", correct: false },
+            { text: "la fibrinolyse proscrit une angioplastie pendant 3 heures", correct: false },
+            { text: "l'angioplastie primaire est une bonne option", correct: true }
+        ]
+    },
+
+    // ================= SCA NST =================
+    {
+        category: "SCA NST",
+        text: "Question 1 - Quelles sont les étapes indispensables dans la prise en charge d’un SCA non ST+ ?",
+        options: [
+            { text: "évaluation de la probabilité clinique", correct: true },
+            { text: "évaluation des délais d’orientation vers un centre de cardiologie interventionnelle", correct: true },
+            { text: "évaluation de la probabilité clinique", correct: false },
+            { text: "évaluation des délais de revascularisation", correct: true },
+            { text: "évaluation du risque pronostique", correct: true }
+        ]
+    },
+    {
+        category: "SCA NST",
+        text: "Question 2 - Concernant la stratégie diagnostique « H0/H3 » dans le SCA non ST+, donner les réponses justes",
+        options: [
+            { text: "un seul dosage de troponine est nécessaire si le patient a une douleur depuis plus de 2 heures", correct: false },
+            { text: "le patient est reconvoqué aux urgences après sa sortie", correct: false },
+            { text: "elle ne concerne que les troponines de haute sensibilité", correct: true },
+            { text: "l’absence d’élévation de troponine doit faire rechercher un autre diagnostic", correct: true },
+            { text: "en cas d’absence d’élévation de la troponine le patient ne peut sortir que si la douleur a disparu", correct: true }
+        ]
+    },
+    {
+        category: "SCA NST",
+        text: "Question 3 - Quels sont les critères permettant de classer un SCA non ST+ à très haut risque ?",
+        options: [
+            { text: "un antécédent d'infarctus précoce", correct: false },
+            { text: "des troubles du rythme graves", correct: true },
+            { text: "un antécédent de diabète", correct: false },
+            { text: "un antécédent de diabète", correct: false },
+            { text: "une instabilité hémodynamique", correct: true }
+        ]
+    },
+    {
+        category: "SCA NST",
+        text: "Question 4 - Concernant les délais de revascularisation à mettre en œuvre dans le SCA non ST+, donner les réponses justes",
+        options: [
+            { text: "moins de 6 h en cas de SCA non ST+ à risque intermédiaire", correct: false },
+            { text: "moins de 2 h en cas de SCA non ST+ à très haut risque", correct: true },
+            { text: "difficiles à estimer en SMUR quel que soit le niveau de risque", correct: false },
+            { text: "seulement estimés par le cardiologue", correct: false },
+            { text: "dans les 24 h pour les SCA non ST+ à haut risque", correct: true }
+        ]
+    },
+    {
+        category: "SCA NST",
+        text: "Question 5 - Les traitements pharmacologiques à mettre en œuvre pour les SCA non ST+ sont :",
+        options: [
+            { text: "les antalgiques en cas de douleur", correct: true },
+            { text: "les inhibiteurs des P2Y12 dès que possible", correct: false },
+            { text: "un dérivé nitré en cas de douleur thoracique persistante", correct: true },
+            { text: "l’aspirine dès que possible", correct: true },
+            { text: "le fondaparinux en 1ère intention comme anticoagulant", correct: true }
+        ]
+    },
+
+    // ================= PÉRICARDITE =================
+    {
+        category: "PÉRICARDITE",
+        text: "Question 1 - Concernant la douleur de péricardite aiguë, quelles propositions sont vraies",
+        options: [
+            { text: "douleur majorée ou déclenchée par les mouvements respiratoires", correct: true },
+            { text: "douleur majorée par le décubitus dorsal", correct: true },
+            { text: "douleur thoracique reproduite par la palpation", correct: false },
+            { text: "douleur soulagée par la position assise", correct: true },
+            { text: "l'intensité moindre la différencie de la douleur d'infarctus", correct: false }
+        ]
+    },
+    {
+        category: "PÉRICARDITE",
+        text: "Question 2 - Concernant le traitement de la péricardite aiguë virale, quelles sont les réponses justes ?",
+        options: [
+            { text: "l'activité physique est recommandée si elle atténue la douleur", correct: false },
+            { text: "il repose sur l'aspirine à doses anti-agrégantes", correct: true },
+            { text: "il est prescrit pour une durée de 15 jours", correct: true },
+            { text: "l'association à de la colchicine réduit le risque de rechute", correct: true },
+            { text: "il repose sur la corticothérapie", correct: false }
+        ]
+    },
+    {
+        category: "PÉRICARDITE",
+        text: "Question 3 - Concernant la tamponnade cardiaque, quelles sont les réponses justes ?",
+        options: [
+            { text: "se traduit sur le plan ECG par des ondes T amples et symétriques de façon diffuse", correct: false },
+            { text: "est une urgence thérapeutique", correct: true },
+            { text: "se traduit échographiquement par un collapsus diastolique des cavités droites en expiration", correct: true },
+            { text: "peut être drainée aux urgences", correct: true },
+            { text: "complique dans 30% des cas une péricardite aiguë virale", correct: false }
+        ]
+    },
+    {
+        category: "PÉRICARDITE",
+        text: "Question 4 - Concernant l'ECG d'une péricardite aiguë virale, quelles sont les réponses justes ?",
+        options: [
+            { text: "le sus-décalage du segment PQ est très caractéristique", correct: false },
+            { text: "se présente classiquement comme un sus-décalage diffus du segment ST concave vers le haut", correct: true },
+            { text: "peut montrer des troubles de la repolarisation dans un territoire coronaire", correct: true },
+            { text: "varie selon le stade d'évolution de la péricardite aiguë", correct: true },
+            { text: "le microvoltage est en faveur d'un épanchement abondant", correct: true }
+        ]
+    },
+
+    // ================= IC/OAP =================
+    {
+        category: "IC/OAP",
+        text: "Question 1 - Concernant l'épidémiologie de l'insuffisance cardiaque, donner les réponses justes :",
+        options: [
+            { text: "L'évolution naturelle est émaillée d'épisodes aigus marqués par une récupération incomplète", correct: true },
+            { text: "La principale cause de décès est la mort subite par trouble du rythme auriculaire", correct: false },
+            { text: "La prévalence de l'insuffisance cardiaque est en augmentation et en partie liée à l'augmentation de la survie post-IDM", correct: true },
+            { text: "La cardiopathie ischémique est la première cause d'insuffisance cardiaque dans les pays industrialisés", correct: true },
+            { text: "La mortalité est d'environ 4% à 5 ans avec un âge moyen au moment du décès proche de 80 ans", correct: false }
+        ]
+    },
+    {
+        category: "IC/OAP",
+        text: "Question 2 - Concernant l'insuffisance cardiaque aiguë (ICA) donner les réponses justes ?",
+        options: [
+            { text: "Les 3 principaux facteurs déclenchants sont l'arythmie, l'infection et le SCA", correct: true },
+            { text: "La principale cause d'une insuffisance cardiaque droite est l'embolie pulmonaire", correct: true },
+            { text: "L'ICA hypertensive représente environ 40% des présentations cliniques du syndrome d'ICA (SICA)", correct: true },
+            { text: "Tout asthme débutant chez le soixantenaire doit être considéré comme une insuffisance cardiaque jusqu'à preuve du contraire", correct: true },
+            { text: "La turgescence jugulaire signe l'insuffisance cardiaque droite", correct: true }
+        ]
+    },
+    {
+        category: "IC/OAP",
+        text: "Question 3 - Le bilan systématique de l'insuffisance cardiaque comprend la réalisation de :",
+        options: [
+            { text: "Un dosage des peptides natriurétiques", correct: true },
+            { text: "Un échographie doppler rénale", correct: false },
+            { text: "Une échocardiographie transthoracique", correct: true },
+            { text: "Un ECG", correct: true },
+            { text: "Une radiographie thoracique de profil", correct: false }
+        ]
+    },
+    {
+        category: "IC/OAP",
+        text: "Question 4 - Concernant le traitement de l'insuffisance cardiaque aiguë :",
+        options: [
+            { text: "Le choc cardiogénique justifie l'introduction de dobutamine en première intention par l'urgentiste", correct: false },
+            { text: "Le Lasilix® (furosémide) doit être introduit à la posologie de 20 à 40 mg chez le patient \"vierge\" de diurétique de l'anse", correct: true },
+            { text: "Les patients les moins graves justifient d'une surveillance en UHCD < 24h avec consultation de contrôle ambulatoire dans un délai de 15 jours", correct: true },
+            { text: "Les dérivés nitrés sont contre-indiqués en cas d'asthme", correct: false },
+            { text: "Il faut préférer un mode de VNI en CPAP en cas d'hypercapnie et/ou d'acidose", correct: false }
+        ]
+    },
+    {
+        category: "IC/OAP",
+        text: "Question 5 - Quels sont les signes d'imagerie en faveur du diagnostic d'insuffisance cardiaque aiguë ?",
+        options: [
+            { text: "Un épanchement pleural bilatéral", correct: true },
+            { text: "Une FEVG visuelle altérée à l'échoscopie cardiaque", correct: true },
+            { text: "Des lignes B de Kerley à l'échoscopie pleurale", correct: true },
+            { text: "Une surcharge hilaire en aile de papillon sur la radiographie thoracique", correct: true },
+            { text: "Une cardiomégalie", correct: true }
+        ]
+    },
+
+    // ================= TROUBLES DU RYTHME =================
+    {
+        category: "TROUBLES DU RYTHME",
+        text: "Question 1 - Concernant la fibrillation atriale, donner les réponses justes :",
+        options: [
+            { text: "Les ondes P sont irrégulières", correct: false },
+            { text: "La FC est toujours supérieure à 100 bpm", correct: true },
+            { text: "Elle peut être déclenchée par une intoxication éthylique aiguë", correct: true },
+            { text: "Les complexes QRS sont toujours fins", correct: false },
+            { text: "En cas de BAV complet, l'espace RR est constant", correct: false }
+        ]
+    },
+    {
+        category: "TROUBLES DU RYTHME",
+        text: "Question 2 - Quelles sont les complications de la fibrillation atriale ?",
+        options: [
+            { text: "L'insuffisance cardiaque aiguë", correct: true },
+            { text: "La cardiopathie dilatée", correct: true },
+            { text: "La douleur thoracique", correct: true },
+            { text: "Les embolies systémiques", correct: true },
+            { text: "Les embolies coronariennes", correct: true }
+        ]
+    },
+    {
+        category: "TROUBLES DU RYTHME",
+        text: "Question 3 - Concernant le traitement de la fibrillation atriale, donner les réponses justes :",
+        options: [
+            { text: "Le traitement par héparine est nécessaire avant traitement par un anticoagulant direct par voie orale", correct: false },
+            { text: "L'amiodarone peut réduire une FA", correct: true },
+            { text: "La digoxine peut réduire une FA", correct: false },
+            { text: "La prévention des embolies systémiques par anticoagulant est systématique", correct: true },
+            { text: "Les anticoagulants directs par voie orale procurent moins de complications hémorragiques cérébrales que les AVK", correct: true }
+        ]
+    },
+    {
+        category: "TROUBLES DU RYTHME",
+        text: "Question 4 - Concernant les tachycardies supraventriculaires, donner les réponses justes :",
+        options: [
+            { text: "Le principal mécanisme est la réentrée", correct: true },
+            { text: "La réentrée nécessite deux voies de conduction rapide", correct: false },
+            { text: "Les périodes réfractaires des deux voies doivent être différentes", correct: true },
+            { text: "Les thérapeutiques médicamenteuses font appel aux inhibiteurs calciques de type dihydropyridines", correct: false },
+            { text: "La réentrée est le plus souvent intra-nodale", correct: true }
+        ]
+    },
+    {
+        category: "TROUBLES DU RYTHME",
+        text: "Question 5 - Concernant le syndrome de Wolff-Parkinson-White, donner les réponses justes :",
+        options: [
+            { text: "Le PR est compris entre 120 et 150 ms", correct: false },
+            { text: "Il existe un risque de mort subite", correct: true },
+            { text: "Peut se dégrader en FA", correct: true },
+            { text: "Au cours d'un accès de tachycardie, l'onde P est toujours visible", correct: false },
+            { text: "L'onde delta succède au QRS", correct: false }
+        ]
+    },
+
+    // ================= HTA =================
+    {
+        category: "HTA",
+        text: "Question 1 - Dans les HTA sévères, quels sont les signes cliniques en faveur d'un retentissement viscéral devant faire craindre une urgence hypertensive ?",
+        options: [
+            { text: "Acouphènes", correct: false },
+            { text: "Syndrome confusionnel", correct: true },
+            { text: "Douleur thoracique", correct: true },
+            { text: "Polyuro-polydipsie", correct: true },
+            { text: "Céphalées matinales isolées", correct: false }
+        ]
+    },
+    {
+        category: "HTA",
+        text: "Question 2 - Concernant l'HTA maligne, donner les réponses justes :",
+        options: [
+            { text: "Elle justifie l'instauration d'un traitement anti-hypertenseur IV", correct: true },
+            { text: "Elle peut être définie comme une HTA sévère associée à une rétinopathie hypertensive", correct: true },
+            { text: "L'objectif de TA des premières heures est une normalisation de la tension", correct: false },
+            { text: "Elle peut se compliquer d'encéphalopathie hypertensive et de MAT (micro-angiopathie thrombotique)", correct: true },
+            { text: "Elle doit faire rechercher l'existence d'une HTA secondaire", correct: true }
+        ]
+    },
+    {
+        category: "HTA",
+        text: "Question 3 - Le bilan d'une HTA sévère comprend :",
+        options: [
+            { text: "Un bilan d'hémolyse", correct: true },
+            { text: "Un fond d'œil (FO)", correct: true },
+            { text: "La réalisation d'un ECG", correct: true },
+            { text: "Un ionogramme sanguin avec fonction rénale", correct: true },
+            { text: "La réalisation systématique d'une imagerie cérébrale", correct: false }
+        ]
+    },
+    {
+        category: "HTA",
+        text: "Question 4 - Concernant la prise en charge des urgences hypertensives :",
+        options: [
+            { text: "L'objectif est une baisse de la TA de 50% les premières heures", correct: false },
+            { text: "Un anti-hypertenseur doit être instauré en cas de PAS > 220 mmHg en présence d'un AVC hémorragique", correct: true },
+            { text: "Le labétalol et la nicardipine sont les molécules préférentiellement utilisées dans le contrôle tensionnel des urgences neurologiques", correct: true },
+            { text: "Une dissection aortique justifie un objectif de TAS < 120 mmHg et une FC < 60 bpm", correct: true },
+            { text: "L'OAP justifie l'instauration préférentielle de dérivés nitrés et diurétiques de l'anse", correct: true }
+        ]
+    },
+    {
+        category: "HTA",
+        text: "Question 5 - Concernant l'HTA sévère isolée (sans signe de souffrance viscérale), donner les réponses justes :",
+        options: [
+            { text: "Si le patient est diabétique, on introduira préférentiellement un thiazidique", correct: false },
+            { text: "L'objectif est une normalisation de la tension avant la sortie des urgences", correct: false },
+            { text: "Si le patient est insuffisant rénal, les IEC et BB sont à privilégier", correct: true },
+            { text: "L'introduction d'un traitement anti-HTA PO est préférée à la voie IV", correct: true },
+            { text: "En cas de bithérapie, on privilégiera l'association d'un IEC et ARA2", correct: false }
+        ]
+    },
+
+    // ================= TRAUMATISME RACHIDIEN =================
+    {
+        category: "TRAUMATISME RACHIDIEN",
+        text: "Question 1 - Concernant la lecture d'une radiologie du rachis, quelles sont les propositions justes ?",
+        options: [
+            { text: "Les corps vertébraux du rachis cervical sont approximativement de taille égale", correct: true },
+            { text: "L'analyse des tissus est utile pour le diagnostic d'une fracture", correct: true },
+            { text: "Il y a 5 lignes qui permettent de confirmer l'alignement du rachis sur la radio de profil du rachis cervical", correct: true },
+            { text: "L'espace rétro-pharyngé est deux fois plus large que l'espace rétro-trachéal", correct: true },
+            { text: "Les apophyses épineuses diminuent progressivement en taille de C1 à C7", correct: false }
+        ]
+    },
+    {
+        category: "TRAUMATISME RACHIDIEN",
+        text: "Question 2 - Concernant les traumatismes du rachis cervical, quelles sont les propositions justes ?",
+        options: [
+            { text: "Le collier cervical permet de maintenir l'axe tête-épaules et doit toujours être rigide", correct: false },
+            { text: "Les traumatismes du rachis cervical sont les traumatismes les plus fréquents", correct: true },
+            { text: "En cas de signe de gravité, surtout neurologique, il faut immobiliser le patient par un collier rigide", correct: true },
+            { text: "Des paresthésies d'un des deux membres supérieurs signent la présence d'une fracture", correct: false },
+            { text: "Les conditions du traumatisme peuvent représenter un élément de gravité pour la prise en charge", correct: true }
+        ]
+    },
+    {
+        category: "TRAUMATISME RACHIDIEN",
+        text: "Question 3 - Concernant les traumatismes du rachis dorso-lombaire, quelles sont les propositions justes ?",
+        options: [
+            { text: "La vitesse de l'accident entre en compte dans la gravité d'un traumatisme dorso-lombaire", correct: true },
+            { text: "Pour tester la racine L2 on demande au patient de plier le genou", correct: false },
+            { text: "Lors de la prise en charge d'un patient victime d'un traumatisme dorso-lombaire il est prioritaire de poser le diagnostic", correct: false },
+            { text: "Le TDM du rachis peut être différé si le patient est contrôlé sur le plan antalgique et peut se mobiliser normalement", correct: true },
+            { text: "Pour tester la racine L5 on demande au patient d'étendre son hallux", correct: true }
+        ]
+    },
+    {
+        category: "TRAUMATISME RACHIDIEN",
+        text: "Question 4 - Concernant les traumatismes du rachis cervical, quelles sont les propositions justes ?",
+        options: [
+            { text: "L'immobilisation du rachis cervical doit toujours être rigide", correct: false },
+            { text: "L'examen clinique et surtout neurologique doit s'effectuer avec le collier cervical en place", correct: true },
+            { text: "Le collier cervical peut être retiré par le médecin urgentiste", correct: true },
+            { text: "Le collier cervical peut être retiré par le médecin urgentiste avant le bilan radiologique", correct: true },
+            { text: "Un mécanisme de distraction (pendu) contre-indique le retrait du collier cervical", correct: true }
+        ]
+    },
+
+    // ================= TRAUMATISME THORACIQUE =================
+    {
+        category: "TRAUMATISME THORACIQUE",
+        text: "Question 1 - En Traumatologie thoracique, sont des éléments de gravité ?",
+        options: [
+            { text: "Une prise d'anticoagulant", correct: true },
+            { text: "Âge supérieur à 65 ans", correct: true },
+            { text: "Une pathologie pulmonaire préexistante", correct: true },
+            { text: "Une pathologie rénale préexistante", correct: false },
+            { text: "L'existence d'un traumatisme pénétrant", correct: true }
+        ]
+    },
+    {
+        category: "TRAUMATISME THORACIQUE",
+        text: "Question 2 - Quels sont les éléments propres aux personnes âgées victimes d'un traumatisme thoracique ?",
+        options: [
+            { text: "Faible minéralisation osseuse", correct: true },
+            { text: "Elasticité importante de la cage thoracique", correct: false },
+            { text: "Lésions parenchymateuses plus fréquentes que chez le sujet jeune", correct: false },
+            { text: "Lésions pariétales plus fréquentes", correct: true },
+            { text: "Les fractures de côtes au-dessus de 3 sont un facteur de gravité", correct: true }
+        ]
+    }
 ];
 
 // ════════════════════════════════════════════════════
