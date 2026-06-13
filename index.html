@@ -3170,8 +3170,8 @@ function renderQuestion() {
   document.getElementById('progressBar').style.width = `${(i / total) * 100}%`;
 
   const correctCount = q.options.filter(o => o.correct).length;
-  document.getElementById('questionTypeBadge').textContent =
-    correctCount === 1 ? 'QCM — 1 bonne réponse' : `QCM — ${correctCount} bonnes réponses`;
+  document.getElementById('questionTypeBadge').textContent = 'QCM';
+    //correctCount === 1 ? 'QCM — 1 bonne réponse' : `QCM — ${correctCount} bonnes réponses`;
 
   document.getElementById('questionText').textContent = q.text;
 
