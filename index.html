@@ -1,249 +1,791 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>QCM DESMU</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DESMU — Révisions QCM</title>
 <style>
-:root {
-  --bg: #ffffff;
-  --text: #111;
-  --card: #f5f5f5;
-  --primary: #2563eb;
-  --correct: #16a34a;
-  --wrong: #dc2626;
-}
+  :root {
+    --font-display: 'Georgia', serif;
+    --font-body: system-ui, -apple-system, sans-serif;
+    --font-mono: 'Courier New', monospace;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --transition: 0.18s ease;
+  }
 
-[data-theme="dark"] {
-  --bg: #0f172a;
-  --text: #e5e7eb;
-  --card: #1e293b;
-  --primary: #60a5fa;
-  --correct: #22c55e;
-  --wrong: #ef4444;
-}
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --bg-hover: #1e2530;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #7d8590;
+    --text-dim: #484f58;
+    --accent: #388bfd;
+    --accent-soft: #1c2d4a;
+    --correct: #3fb950;
+    --correct-soft: #122820;
+    --correct-border: #238636;
+    --wrong: #f85149;
+    --wrong-soft: #2d1114;
+    --wrong-border: #da3633;
+    --partial: #d29922;
+    --partial-soft: #2e2107;
+    --partial-border: #9e6a03;
+    --badge-bg: #21262d;
+    --btn-primary: #238636;
+    --btn-primary-hover: #2ea043;
+    --btn-secondary: #21262d;
+    --btn-secondary-hover: #30363d;
+  }
 
-body {
-  margin: 0;
-  font-family: system-ui, Arial;
-  background: var(--bg);
-  color: var(--text);
-}
+  [data-theme="light"] {
+    --bg: #f6f8fa;
+    --bg-card: #ffffff;
+    --bg-hover: #f0f3f6;
+    --border: #d0d7de;
+    --text: #1f2328;
+    --text-muted: #636c76;
+    --text-dim: #aaaaaa;
+    --accent: #0969da;
+    --accent-soft: #dbeafe;
+    --correct: #1a7f37;
+    --correct-soft: #dafbe1;
+    --correct-border: #2da44e;
+    --wrong: #cf222e;
+    --wrong-soft: #ffebe9;
+    --wrong-border: #d1242f;
+    --partial: #9a6700;
+    --partial-soft: #fff8c5;
+    --partial-border: #d4a72c;
+    --badge-bg: #eaeef2;
+    --btn-primary: #2da44e;
+    --btn-primary-hover: #2c974b;
+    --btn-secondary: #f6f8fa;
+    --btn-secondary-hover: #eaeef2;
+  }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-h1 { text-align: center; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background var(--transition), color var(--transition);
+    line-height: 1.6;
+  }
 
-.card {
-  background: var(--card);
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
-}
+  /* ── Header ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    gap: 1rem;
+  }
 
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .logo span { color: var(--accent); }
 
-.btn {
-  background: var(--primary);
-  color: white;
-  margin: 5px 0;
-  width: 100%;
-}
+  .theme-btn {
+    background: var(--btn-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: background var(--transition);
+    flex-shrink: 0;
+  }
+  .theme-btn:hover { background: var(--btn-secondary-hover); }
 
-.option {
-  display: block;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
-  background: rgba(0,0,0,0.05);
-  cursor: pointer;
-}
+  /* ── Layout ── */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 4rem;
+  }
 
-.option.correct {
-  background: var(--correct);
-  color: white;
-}
+  /* ── Screen: Home ── */
+  #screen-home h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    margin-bottom: 0.25rem;
+    line-height: 1.25;
+  }
+  #screen-home .subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
 
-.option.wrong {
-  background: var(--wrong);
-  color: white;
-}
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.75rem;
+  }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+  .random-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.25rem 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
 
-select, input {
-  padding: 8px;
-  border-radius: 8px;
-}
+  .random-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .random-row label {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .random-row input[type="number"] {
+    width: 70px;
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-family: var(--font-mono);
+    text-align: center;
+  }
+  .random-row input[type="number"]:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .total-hint {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
 
-.hidden { display: none; }
+  /* ── Category cards ── */
+  .categories-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .cat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+    gap: 0.75rem;
+    text-align: left;
+    width: 100%;
+    color: var(--text);
+  }
+  .cat-card:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent);
+  }
+  .cat-card .cat-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .cat-card .cat-count {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+  .cat-card .cat-arrow {
+    color: var(--text-dim);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background var(--transition), opacity var(--transition);
+    white-space: nowrap;
+  }
+  .btn:active { opacity: 0.85; }
+  .btn-primary {
+    background: var(--btn-primary);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--btn-primary-hover); }
+  .btn-secondary {
+    background: var(--btn-secondary);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { background: var(--btn-secondary-hover); }
+  .btn-full { width: 100%; }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  /* ── Screen: Quiz ── */
+  #screen-quiz { display: none; }
+
+  .quiz-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .quiz-meta {
+    flex: 1;
+  }
+  .quiz-category {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.1rem;
+  }
+  .quiz-progress-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .progress-bar-track {
+    height: 3px;
+    background: var(--border);
+    border-radius: 99px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 99px;
+    transition: width 0.3s ease;
+  }
+
+  .question-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.25rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .question-type-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--badge-bg);
+    color: var(--text-muted);
+    padding: 0.2rem 0.55rem;
+    border-radius: 99px;
+    margin-bottom: 0.85rem;
+  }
+  .question-text {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .option-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    cursor: pointer;
+    transition: border-color var(--transition), background var(--transition);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+  .option-btn:hover:not(:disabled):not(.locked) {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .option-btn.selected {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .option-btn .opt-letter {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    min-width: 18px;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+  }
+  .option-btn.selected .opt-letter { color: var(--accent); }
+  .option-btn .opt-text { flex: 1; }
+  .option-btn .opt-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* Correction states */
+  .option-btn.result-correct {
+    border-color: var(--correct-border) !important;
+    background: var(--correct-soft) !important;
+    color: var(--text);
+  }
+  .option-btn.result-correct .opt-letter { color: var(--correct); }
+
+  .option-btn.result-wrong {
+    border-color: var(--wrong-border) !important;
+    background: var(--wrong-soft) !important;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .option-btn.result-wrong .opt-letter { color: var(--wrong); }
+
+  .option-btn.result-missed {
+    border-color: var(--partial-border) !important;
+    background: var(--partial-soft) !important;
+  }
+  .option-btn.result-missed .opt-letter { color: var(--partial); }
+
+  .option-btn:disabled { cursor: default; }
+
+  /* Correction feedback */
+  .correction-box {
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    display: none;
+    margin-top: 0.4rem;
+  }
+  .correction-box.show { display: block; }
+  .correction-box.all-correct {
+    background: var(--correct-soft);
+    border: 1px solid var(--correct-border);
+    color: var(--correct);
+  }
+  .correction-box.partial {
+    background: var(--partial-soft);
+    border: 1px solid var(--partial-border);
+    color: var(--partial);
+  }
+  .correction-box.all-wrong {
+    background: var(--wrong-soft);
+    border: 1px solid var(--wrong-border);
+    color: var(--wrong);
+  }
+  .correction-box strong { font-weight: 700; }
+
+  .quiz-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .quiz-actions .btn { padding: 0.75rem 1rem; font-size: 0.95rem; }
+
+  /* ── Screen: End ── */
+  #screen-end { display: none; }
+  .end-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .end-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .end-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .end-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .end-card .btn { min-width: 180px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    header { padding: 0 0.75rem; }
+    main { padding: 1.1rem 0.75rem 3.5rem; }
+    .option-btn { padding: 0.75rem 0.85rem; font-size: 0.875rem; }
+    .question-card { padding: 1.1rem 1rem 1rem; }
+  }
 </style>
 </head>
-
 <body>
-<div class="container">
 
-<h1>QCM DESMU</h1>
+<header>
+  <div class="logo">DES<span>MU</span> — QCM</div>
+  <button class="theme-btn" id="themeToggle" title="Changer le thème">🌙</button>
+</header>
 
-<div class="topbar">
-  <button onclick="toggleTheme()">🌙 / ☀️</button>
+<main>
+  <!-- ──────────── HOME ──────────── -->
+  <div id="screen-home">
+    <h1>Révisions aux partiels</h1>
+    <p class="subtitle">Médecine d'Urgence — Questions à choix multiples</p>
 
-  <select id="categorySelect"></select>
+    <div class="section-label">Tirage aléatoire — toutes catégories</div>
+    <div class="random-box">
+      <div class="random-row">
+        <label for="randomCount">Nombre de questions :</label>
+        <input type="number" id="randomCount" min="1" value="10">
+        <span class="total-hint" id="totalHint"></span>
+      </div>
+      <button class="btn btn-primary btn-full" id="startRandomBtn">
+        🎲 Lancer le tirage aléatoire
+      </button>
+    </div>
 
-  <input id="randomCount" type="number" min="1" placeholder="Nb questions (optionnel)" />
+    <div class="section-label">Par catégorie</div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </div>
 
-  <button class="btn" onclick="startQuiz()">Démarrer</button>
-</div>
+  <!-- ──────────── QUIZ ──────────── -->
+  <div id="screen-quiz">
+    <div class="quiz-header">
+      <button class="btn btn-secondary" id="backBtn" style="padding: 0.45rem 0.75rem; font-size: 0.85rem;">← Retour</button>
+      <div class="quiz-meta">
+        <div class="quiz-category" id="quizCategory"></div>
+        <div class="quiz-progress-text" id="quizProgressText"></div>
+      </div>
+    </div>
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
 
-<div id="quiz" class="card hidden">
-  <h3 id="questionText"></h3>
-  <div id="options"></div>
-  <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Suivant</button>
-</div>
+    <div class="question-card">
+      <div class="question-type-badge" id="questionTypeBadge">QCM</div>
+      <div class="question-text" id="questionText"></div>
+      <div class="options-list" id="optionsList"></div>
+      <div class="correction-box" id="correctionBox"></div>
+    </div>
 
-</div>
+    <div class="quiz-actions">
+      <button class="btn btn-primary btn-full" id="validateBtn" disabled>Valider ma réponse</button>
+      <button class="btn btn-secondary btn-full" id="nextBtn" style="display:none">Question suivante →</button>
+    </div>
+  </div>
+
+  <!-- ──────────── END ──────────── -->
+  <div id="screen-end">
+    <div class="end-card">
+      <div class="end-icon">✅</div>
+      <h2>Série terminée !</h2>
+      <p id="endMessage"></p>
+      <button class="btn btn-primary" id="restartBtn">Retour à l'accueil</button>
+    </div>
+  </div>
+</main>
 
 <script>
-// ===================== DATA =====================
+// ════════════════════════════════════════════════════
+//  BASE DE DONNÉES — QCM
+//  Ajoute tes questions ici en suivant le même format
+// ════════════════════════════════════════════════════
 const questionsData = [
   {
     category: "ORGANISATION EN MU",
-    text: "Concernant la SAUV...",
+    text: "Concernant l'organisation de la salle des urgences vitales (SAUV) au sein d'une structure des urgences. Veuillez choisir au moins une réponse :",
     options: [
-      { text: "Une infirmière dédiée", correct: false },
-      { text: "Matériel complet de réanimation", correct: true },
-      { text: "Accueil détresse vitale potentielle", correct: true },
-      { text: "Accueil détresse vitale existante", correct: true },
-      { text: "Peut être hors urgences", correct: false }
+      { text: "Une infirmière doit être dédiée au fonctionnement propre de la SAUV", correct: false },
+      { text: "Tout le matériel de réanimation doit être présent dans une SAUV", correct: true },
+      { text: "La SAUV est dans un service d'urgence le lieu d'accueil des patients en détresse vitale potentielle", correct: true },
+      { text: "La SAUV est le lieu d'accueil des patients en détresse vitale existante", correct: true },
+      { text: "La Salle d'accueil des urgences vitales (SAUV) peut être située dans un autre service que celui des urgences", correct: false }
     ]
   },
   {
     category: "SEPSIS",
-    text: "Définition du sepsis (Sepsis-3)",
+    text: "Depuis 2016 et le consensus Sepsis-3, les cas suivants correspondent à la définition de sepsis :",
     options: [
-      { text: "qSOFA > 2", correct: true },
-      { text: "IRA sévère", correct: true },
-      { text: "Hypotension + vasopresseurs + lactate", correct: false },
-      { text: "Hyperlactatémie seule", correct: false },
-      { text: "Hypotension seule", correct: false }
+      { text: "Une infection avec un qSOFA > 2", correct: true },
+      { text: "Une infection avec une insuffisance rénale aiguë sévère", correct: true },
+      { text: "Une infection avec une hypotension artérielle nécessitant l'introduction de vasopresseurs et une hyperlactatémie", correct: false },
+      { text: "Une infection associée à une hyperlactatémie", correct: false },
+      { text: "Une infection associée à une hypotension artérielle", correct: false }
+    ]
+  },
+  {
+    category: "SEPSIS",
+    text: "Quel est le remplissage vasculaire recommandé devant un choc septique ?",
+    options: [
+      { text: "30 ml/kg le plus vite possible", correct: false },
+      { text: "500 mL de colloïdes en 3 heures", correct: false },
+      { text: "Cristalloïdes équilibrés (Ringer lactate) ou sérum physiologique", correct: false },
+      { text: "1 litre de cristalloïdes en 1 h", correct: false },
+      { text: "30 ml/kg de cristalloïdes en 3 heures", correct: true }
     ]
   }
+  // ─────────────────────────────────────────────────
+  // 👇 AJOUTE TES QUESTIONS ICI (copie le bloc ci-dessus)
+  // ─────────────────────────────────────────────────
 ];
 
-// ===================== STATE =====================
-let current = 0;
-let quizSet = [];
-let answered = false;
+// ════════════════════════════════════════════════════
+//  LOGIQUE DE L'APPLICATION
+// ════════════════════════════════════════════════════
 
-// ===================== INIT =====================
-function initCategories() {
-  const select = document.getElementById("categorySelect");
-  const categories = [...new Set(questionsData.map(q => q.category))];
+// ── Thème ──
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+let isDark = true;
 
-  select.innerHTML = `<option value="ALL">Toutes catégories</option>`;
-  categories.forEach(c => {
-    select.innerHTML += `<option value="${c}">${c}</option>`;
+function setTheme(dark) {
+  isDark = dark;
+  html.setAttribute('data-theme', dark ? 'dark' : 'light');
+  themeToggle.textContent = dark ? '🌙' : '☀️';
+  localStorage.setItem('desmu-theme', dark ? 'dark' : 'light');
+}
+
+themeToggle.addEventListener('click', () => setTheme(!isDark));
+
+const savedTheme = localStorage.getItem('desmu-theme');
+if (savedTheme) setTheme(savedTheme === 'dark');
+
+// ── Données ──
+const categories = [...new Set(questionsData.map(q => q.category))];
+const totalHint = document.getElementById('totalHint');
+const randomCountInput = document.getElementById('randomCount');
+totalHint.textContent = `(${questionsData.length} au total)`;
+
+// ── Écrans ──
+const screens = { home: 'screen-home', quiz: 'screen-quiz', end: 'screen-end' };
+function showScreen(name) {
+  Object.values(screens).forEach(id => {
+    document.getElementById(id).style.display = 'none';
   });
+  document.getElementById(screens[name]).style.display = 'block';
+  window.scrollTo(0, 0);
+}
+showScreen('home');
+
+// ── Génération des catégories ──
+const grid = document.getElementById('categoriesGrid');
+const LETTERS = 'ABCDE';
+
+categories.forEach(cat => {
+  const count = questionsData.filter(q => q.category === cat).length;
+  const btn = document.createElement('button');
+  btn.className = 'cat-card';
+  btn.innerHTML = `
+    <div>
+      <div class="cat-name">${cat}</div>
+      <div class="cat-count">${count} question${count > 1 ? 's' : ''}</div>
+    </div>
+    <span class="cat-arrow">›</span>
+  `;
+  btn.addEventListener('click', () => startQuiz(questionsData.filter(q => q.category === cat), cat));
+  grid.appendChild(btn);
+});
+
+// ── Tirage aléatoire ──
+document.getElementById('startRandomBtn').addEventListener('click', () => {
+  const n = parseInt(randomCountInput.value) || 10;
+  const shuffled = [...questionsData].sort(() => Math.random() - 0.5);
+  const selected = shuffled.slice(0, Math.min(n, questionsData.length));
+  startQuiz(selected, 'Tirage aléatoire');
+});
+
+// ── État du quiz ──
+let quiz = { questions: [], index: 0, label: '', selected: new Set(), validated: false };
+
+function startQuiz(questions, label) {
+  quiz = { questions: [...questions].sort(() => Math.random() - 0.5), index: 0, label, selected: new Set(), validated: false };
+  showScreen('quiz');
+  renderQuestion();
 }
 
-initCategories();
+// ── Rendu d'une question ──
+function renderQuestion() {
+  const q = quiz.questions[quiz.index];
+  const total = quiz.questions.length;
+  const i = quiz.index;
+  quiz.selected = new Set();
+  quiz.validated = false;
 
-// ===================== QUIZ LOGIC =====================
-function startQuiz() {
-  const cat = document.getElementById("categorySelect").value;
-  const count = parseInt(document.getElementById("randomCount").value);
+  document.getElementById('quizCategory').textContent = quiz.label;
+  document.getElementById('quizProgressText').textContent = `Question ${i + 1} / ${total}`;
+  document.getElementById('progressBar').style.width = `${(i / total) * 100}%`;
 
-  let filtered = questionsData;
+  const correctCount = q.options.filter(o => o.correct).length;
+  document.getElementById('questionTypeBadge').textContent =
+    correctCount === 1 ? 'QCM — 1 bonne réponse' : `QCM — ${correctCount} bonnes réponses`;
 
-  if (cat !== "ALL") {
-    filtered = filtered.filter(q => q.category === cat);
-  }
+  document.getElementById('questionText').textContent = q.text;
 
-  if (!isNaN(count) && count > 0) {
-    filtered = shuffle(filtered).slice(0, count);
-  }
-
-  quizSet = filtered;
-  current = 0;
-
-  document.getElementById("quiz").classList.remove("hidden");
-  showQuestion();
-}
-
-function showQuestion() {
-  answered = false;
-  document.getElementById("nextBtn").disabled = true;
-
-  const q = quizSet[current];
-  document.getElementById("questionText").innerText = q.text;
-
-  const container = document.getElementById("options");
-  container.innerHTML = "";
-
-  q.options.forEach((opt, i) => {
-    const div = document.createElement("div");
-    div.className = "option";
-    div.innerText = opt.text;
-
-    div.onclick = () => selectAnswer(div, opt);
-    container.appendChild(div);
+  const list = document.getElementById('optionsList');
+  list.innerHTML = '';
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `
+      <span class="opt-letter">${LETTERS[idx]}</span>
+      <span class="opt-text">${opt.text}</span>
+      <span class="opt-icon"></span>
+    `;
+    btn.addEventListener('click', () => toggleOption(idx, btn));
+    list.appendChild(btn);
   });
+
+  const corrBox = document.getElementById('correctionBox');
+  corrBox.className = 'correction-box';
+  corrBox.innerHTML = '';
+
+  document.getElementById('validateBtn').disabled = true;
+  document.getElementById('validateBtn').style.display = '';
+  document.getElementById('nextBtn').style.display = 'none';
 }
 
-function selectAnswer(div, opt) {
-  if (answered) return;
-  answered = true;
-
-  const optionsDiv = document.querySelectorAll(".option");
-
-  quizSet[current].options.forEach((o, i) => {
-    if (o.correct) optionsDiv[i].classList.add("correct");
-    else optionsDiv[i].classList.add("wrong");
-  });
-
-  document.getElementById("nextBtn").disabled = false;
-}
-
-function nextQuestion() {
-  current++;
-  if (current >= quizSet.length) {
-    document.getElementById("quiz").innerHTML =
-      "<h2>Fin du QCM</h2><p>Vous pouvez relancer un test.</p>";
-    return;
-  }
-  showQuestion();
-}
-
-// ===================== UTILS =====================
-function shuffle(arr) {
-  return arr.sort(() => Math.random() - 0.5);
-}
-
-// ===================== THEME =====================
-function toggleTheme() {
-  const root = document.documentElement;
-  if (root.getAttribute("data-theme") === "dark") {
-    root.removeAttribute("data-theme");
+function toggleOption(idx, btn) {
+  if (quiz.validated) return;
+  if (quiz.selected.has(idx)) {
+    quiz.selected.delete(idx);
+    btn.classList.remove('selected');
+    btn.querySelector('.opt-letter').style.color = '';
   } else {
-    root.setAttribute("data-theme", "dark");
+    quiz.selected.add(idx);
+    btn.classList.add('selected');
   }
+  document.getElementById('validateBtn').disabled = quiz.selected.size === 0;
 }
-</script>
 
+// ── Validation ──
+document.getElementById('validateBtn').addEventListener('click', () => {
+  if (quiz.selected.size === 0) return;
+  quiz.validated = true;
+
+  const q = quiz.questions[quiz.index];
+  const correctSet = new Set(q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0));
+  const selected = quiz.selected;
+
+  const truePositives = [...selected].filter(i => correctSet.has(i)).length;
+  const falsePositives = [...selected].filter(i => !correctSet.has(i)).length;
+  const falseNegatives = [...correctSet].filter(i => !selected.has(i)).length;
+
+  const optBtns = document.querySelectorAll('.option-btn');
+  optBtns.forEach((btn, idx) => {
+    btn.disabled = true;
+    const icon = btn.querySelector('.opt-icon');
+    const isCorrect = correctSet.has(idx);
+    const wasSelected = selected.has(idx);
+
+    if (isCorrect && wasSelected) {
+      btn.classList.remove('selected');
+      btn.classList.add('result-correct');
+      icon.textContent = '✓';
+    } else if (!isCorrect && wasSelected) {
+      btn.classList.remove('selected');
+      btn.classList.add('result-wrong');
+      icon.textContent = '✗';
+    } else if (isCorrect && !wasSelected) {
+      btn.classList.add('result-missed');
+      icon.textContent = '↑';
+    }
+  });
+
+  // Feedback
+  const corrBox = document.getElementById('correctionBox');
+  corrBox.classList.add('show');
+
+  if (falsePositives === 0 && falseNegatives === 0) {
+    corrBox.classList.add('all-correct');
+    corrBox.innerHTML = '<strong>✓ Parfait !</strong> Toutes les bonnes réponses cochées, aucune mauvaise.';
+  } else if (truePositives === 0 && falseNegatives === correctSet.size) {
+    corrBox.classList.add('all-wrong');
+    corrBox.innerHTML = `<strong>✗ Raté.</strong> Aucune bonne réponse sélectionnée. Les cases <span style="color:var(--partial)">↑</span> indiquent les réponses correctes manquées.`;
+  } else {
+    corrBox.classList.add('partial');
+    const parts = [];
+    if (falsePositives > 0) parts.push(`${falsePositives} mauvaise${falsePositives > 1 ? 's' : ''} réponse${falsePositives > 1 ? 's' : ''} cochée${falsePositives > 1 ? 's' : ''} <span style="color:var(--wrong)">✗</span>`);
+    if (falseNegatives > 0) parts.push(`${falseNegatives} bonne${falseNegatives > 1 ? 's' : ''} réponse${falseNegatives > 1 ? 's' : ''} manquée${falseNegatives > 1 ? 's' : ''} <span style="color:var(--partial)">↑</span>`);
+    corrBox.innerHTML = `<strong>⚠ Incomplet.</strong> ${parts.join(' · ')}.`;
+  }
+
+  document.getElementById('validateBtn').style.display = 'none';
+  document.getElementById('nextBtn').style.display = '';
+  document.getElementById('nextBtn').textContent =
+    quiz.index + 1 < quiz.questions.length ? 'Question suivante →' : 'Terminer la série ✓';
+
+  window.scrollTo({ top: document.getElementById('correctionBox').offsetTop - 80, behavior: 'smooth' });
+});
+
+// ── Suivant ──
+document.getElementById('nextBtn').addEventListener('click', () => {
+  quiz.index++;
+  if (quiz.index >= quiz.questions.length) {
+    showEnd();
+  } else {
+    renderQuestion();
+    window.scrollTo(0, 0);
+  }
+});
+
+// ── Fin ──
+function showEnd() {
+  document.getElementById('progressBar').style.width = '100%';
+  showScreen('end');
+  document.getElementById('endMessage').textContent =
+    `Tu as complété ${quiz.questions.length} question${quiz.questions.length > 1 ? 's' : ''} de la série « ${quiz.label} ».`;
+}
+
+document.getElementById('restartBtn').addEventListener('click', () => showScreen('home'));
+document.getElementById('backBtn').addEventListener('click', () => {
+  if (confirm('Quitter cette série ? Ta progression sera perdue.')) showScreen('home');
+});
+</script>
 </body>
 </html>
