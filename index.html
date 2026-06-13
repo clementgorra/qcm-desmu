@@ -1106,7 +1106,954 @@ const questionsData = [
             { text: "Lésions pariétales plus fréquentes", correct: true },
             { text: "Les fractures de côtes au-dessus de 3 sont un facteur de gravité", correct: true }
         ]
+    },
+    // ================= ORGANISATION INTRA HOSPITALIERE =================
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant l'organisation de la salle des urgences vitales (SAUV) au sein d'une structure des urgences",
+        options: [
+            { text: "Une infirmière doit être dédiée au fonctionnement propre de la SAUV", correct: false },
+            { text: "Tout le matériel de réanimation doit être présent dans une SAUV", correct: true },
+            { text: "La SAUV est dans un service d'urgence le lieu d'accueil des patients en détresse vitale potentielle", correct: true },
+            { text: "La SAUV est le lieu d'accueil des patients en détresse vitale existante", correct: true },
+            { text: "La Salle d'accueil des urgences vitales (SAUV) peut être située dans un autre service que celui des urgences", correct: false }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant les services des urgences intra-hospitalières (SU) Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "Un établissement, siège d'un SU, doit posséder un laboratoire de biologie en son sein", correct: false },
+            { text: "Un établissement, siège d'un SU, doit posséder un scanner en son sein", correct: false },
+            { text: "Le temps de passage est un indicateur qui permet, seul, de juger de la fluidité d'un SU", correct: false },
+            { text: "Les difficultés d'hospitalisation d'aval du SU sont corrélées au taux d'occupation des lits de l'établissement", correct: true },
+            { text: "Un établissement, siège d'un SU, doit posséder un poste de radiologie en son sein", correct: true }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant l'organisation intra-hospitalière des urgences Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "La structure des urgences doit assurer les éventuels transferts ou le retour à domicile", correct: true },
+            { text: "L'autorisation est délivrée par le ministère de la santé", correct: false },
+            { text: "La structure des urgences doit assurer la prise en charge diagnostique et thérapeutique", correct: true },
+            { text: "La présence d’une infirmière organisatrice (IOA) de l'accueil est une obligation légale 24 heures sur 24", correct: false },
+            { text: "La structure des urgences doit posséder un scanner sur place", correct: false }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant l'Unité d'Hospitalisation de Courte Durée (UHCD) des Urgences Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "L'orientation des patients en hospitalisation soit de l'établissement soit par transfert est la seule possible", correct: false },
+            { text: "Elle peut être incluse dans un autre service", correct: false },
+            { text: "Elle peut être située à distance de la zone d'accueil", correct: true },
+            { text: "Elle contient au moins 5 lits", correct: false },
+            { text: "La durée de séjour doit être de moins de 48h", correct: false }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant les urgences intra-hospitalières Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "Une filière rapide de prise en charge améliore le flux des malades les plus graves", correct: true },
+            { text: "Les malades \"psychiatriques\" doivent être accueillis dans une filière spécifiques séparée du reste des urgences", correct: false },
+            { text: "Un psychiatre doit être présent 24h sur 24", correct: false },
+            { text: "La filière traumatologique doit être individualisée", correct: false },
+            { text: "Un filière rapide de prise en charge améliore le flux des malades les plus légers", correct: true }
+        ]
+    },
+
+    // ================= NIVEAUX DE TRI =================
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Reconnaître les niveaux d'urgence revient à :",
+        options: [
+            { text: "Ajuster les effectifs à l'activité", correct: false },
+            { text: "Orienter les AVC vers l'hôpital le plus proche", correct: false },
+            { text: "Décider ou pas de l'intervention d'un SMUR", correct: true },
+            { text: "Stratifier le risque de complications", correct: true },
+            { text: "Réorienter en maison médicale de garde", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Les soins de premiers recours concernent :",
+        options: [
+            { text: "La prévention primaire", correct: true },
+            { text: "L'hospitalisation", correct: false },
+            { text: "L'admission en EHPAD", correct: true },
+            { text: "Le conseil du pharmacien", correct: true },
+            { text: "La consultation du généraliste", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Dans notre système de santé, les soins de premier recours sont assurés par :",
+        options: [
+            { text: "les médecins spécialistes (non généralistes)", correct: false },
+            { text: "les médecins généralistes", correct: true },
+            { text: "les centres de santé", correct: true },
+            { text: "les infirmières hospitalières", correct: false },
+            { text: "les infirmières libérales", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Les soins sont qualifiés de 2ème recours lorsque les patients sont adressés dans le service d'urgence par :",
+        options: [
+            { text: "Un médecin régulateur de la permanence des soins ambulatoires", correct: true },
+            { text: "Un médecin généraliste de garde", correct: true },
+            { text: "Un médecin régulateur de l'aide médicale urgente", correct: true },
+            { text: "Un médecin du SMUR", correct: true },
+            { text: "Un médecin spécialiste (non généraliste)", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Quel est le pourcentage approximatif de patients se présentant dans les services d'urgence pour des soins de premier recours en France ?",
+        options: [
+            { text: "moins de 10%", correct: false },
+            { text: "un tiers", correct: false },
+            { text: "la moitié", correct: false },
+            { text: "les deux tiers", correct: true },
+            { text: "plus de 90%", correct: false }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Dans le code de santé publique, les soins de premier recours incluent :",
+        options: [
+            { text: "la dispensation et l'administration des médicaments", correct: true },
+            { text: "la prise en charge des urgences", correct: false },
+            { text: "l'orientation dans le système de soins", correct: true },
+            { text: "la prévention, le dépistage, le diagnostic, le traitement et le suivi des patients", correct: true },
+            { text: "l'éducation pour la santé", correct: true }
+        ]
+    },
+  // ================= ORGANISATION INTRA HOSPITALIERE =================
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant l'organisation de la salle des urgences vitales (SAUV) au sein d'une structure des urgences",
+        options: [
+            { text: "Une infirmière doit être dédiée au fonctionnement propre de la SAUV", correct: false },
+            { text: "Tout le matériel de réanimation doit être présent dans une SAUV", correct: true },
+            { text: "La SAUV est dans un service d'urgence le lieu d'accueil des patients en détresse vitale potentielle", correct: true },
+            { text: "La SAUV est le lieu d'accueil des patients en détresse vitale existante", correct: true },
+            { text: "La Salle d'accueil des urgences vitales (SAUV) peut être située dans un autre service que celui des urgences", correct: false }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant les services des urgences intra-hospitalières (SU) Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "Un établissement, siège d'un SU, doit posséder un laboratoire de biologie en son sein", correct: false },
+            { text: "Un établissement, siège d'un SU, doit posséder un scanner en son sein", correct: false },
+            { text: "Le temps de passage est un indicateur qui permet, seul, de juger de la fluidité d'un SU", correct: false },
+            { text: "Les difficultés d'hospitalisation d'aval du SU sont corrélées au taux d'occupation des lits de l'établissement", correct: true },
+            { text: "Un établissement, siège d'un SU, doit posséder un poste de radiologie en son sein", correct: true }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant l'organisation intra-hospitalière des urgences Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "La structure des urgences doit assurer les éventuels transferts ou le retour à domicile", correct: true },
+            { text: "L'autorisation est délivrée par le ministère de la santé", correct: false },
+            { text: "La structure des urgences doit assurer la prise en charge diagnostique et thérapeutique", correct: true },
+            { text: "La présence d’une infirmière organisatrice (IOA) de l'accueil est une obligation légale 24 heures sur 24", correct: false },
+            { text: "La structure des urgences doit posséder un scanner sur place", correct: false }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant l'Unité d'Hospitalisation de Courte Durée (UHCD) des Urgences Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "L'orientation des patients en hospitalisation soit de l'établissement soit par transfert est la seule possible", correct: false },
+            { text: "Elle peut être incluse dans un autre service", correct: false },
+            { text: "Elle peut être située à distance de la zone d'accueil", correct: true },
+            { text: "Elle contient au moins 5 lits", correct: false },
+            { text: "La durée de séjour doit être de moins de 48h", correct: false }
+        ]
+    },
+    {
+        category: "ORGANISATION INTRA HOSPITALIERE",
+        text: "Concernant les urgences intra-hospitalières Veuillez choisir au moins une réponse :",
+        options: [
+            { text: "Une filière rapide de prise en charge améliore le flux des malades les plus graves", correct: true },
+            { text: "Les malades \"psychiatriques\" doivent être accueillis dans une filière spécifiques séparée du reste des urgences", correct: false },
+            { text: "Un psychiatre doit être présent 24h sur 24", correct: false },
+            { text: "La filière traumatologique doit être individualisée", correct: false },
+            { text: "Un filière rapide de prise en charge améliore le flux des malades les plus légers", correct: true }
+        ]
+    },
+
+    // ================= NIVEAUX DE TRI =================
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Reconnaître les niveaux d'urgence revient à :",
+        options: [
+            { text: "Ajuster les effectifs à l'activité", correct: false },
+            { text: "Orienter les AVC vers l'hôpital le plus proche", correct: false },
+            { text: "Décider ou pas de l'intervention d'un SMUR", correct: true },
+            { text: "Stratifier le risque de complications", correct: true },
+            { text: "Réorienter en maison médicale de garde", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Les soins de premiers recours concernent :",
+        options: [
+            { text: "La prévention primaire", correct: true },
+            { text: "L'hospitalisation", correct: false },
+            { text: "L'admission en EHPAD", correct: true },
+            { text: "Le conseil du pharmacien", correct: true },
+            { text: "La consultation du généraliste", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Dans notre système de santé, les soins de premier recours sont assurés par :",
+        options: [
+            { text: "les médecins spécialistes (non généralistes)", correct: false },
+            { text: "les médecins généralistes", correct: true },
+            { text: "les centres de santé", correct: true },
+            { text: "les infirmières hospitalières", correct: false },
+            { text: "les infirmières libérales", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Les soins sont qualifiés de 2ème recours lorsque les patients sont adressés dans le service d'urgence par :",
+        options: [
+            { text: "Un médecin régulateur de la permanence des soins ambulatoires", correct: true },
+            { text: "Un médecin généraliste de garde", correct: true },
+            { text: "Un médecin régulateur de l'aide médicale urgente", correct: true },
+            { text: "Un médecin du SMUR", correct: true },
+            { text: "Un médecin spécialiste (non généraliste)", correct: true }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Quel est le pourcentage approximatif de patients se présentant dans les services d'urgence pour des soins de premier recours en France ?",
+        options: [
+            { text: "moins de 10%", correct: false },
+            { text: "un tiers", correct: false },
+            { text: "la moitié", correct: false },
+            { text: "les deux tiers", correct: true },
+            { text: "plus de 90%", correct: false }
+        ]
+    },
+    {
+        category: "NIVEAUX DE TRI",
+        text: "Dans le code de santé publique, les soins de premier recours incluent :",
+        options: [
+            { text: "la dispensation et l'administration des médicaments", correct: true },
+            { text: "la prise en charge des urgences", correct: false },
+            { text: "l'orientation dans le système de soins", correct: true },
+            { text: "la prévention, le dépistage, le diagnostic, le traitement et le suivi des patients", correct: true },
+            { text: "l'éducation pour la santé", correct: true }
+        ]
     }
+];
+
+Si tu veux, prochaine étape utile (très importante pour ton site QCM) :
+👉 
+je peux te faire un parser automatique .md → JS (tu colles ton Word exporté et ça génère tout seul questionsData sans travail manuel).
+
+ok refais pareil pour le 2ème bloc que je t'ai donné
+
+Voici le 2e bloc entièrement converti, avec texte strictement identique au copier-coller, sans reformulation, uniquement structuration en questionsData.
+
+const questionsData = [
+    // ================= RAISONNEMENT MÉDICAL EN MU =================
+    {
+        category: "RAISONNEMENT MÉDICAL EN MU",
+        text: "Aux SAU, lorsque vous y repensez, vous vous souvenez que le chiffre de SpO2 au sujet d'un patient communiqué par l'infirmier était de 93 %, ce que vous aviez attribué à une erreur de mesure en raison des tremblements présentés par la patiente. Comment se nomme le fait de négliger les informations qui contredisent une hypothèse initiale et à considérer plutôt les informations confirmatoires ?",
+        options: [
+            { text: "Le biais de confirmation", correct: true },
+            { text: "Le biais de disponibilité", correct: false },
+            { text: "Le biais d'ancrage", correct: false },
+            { text: "Le biais d'omission", correct: false },
+            { text: "Le biais de représentativité", correct: false }
+        ]
+    },
+    {
+        category: "RAISONNEMENT MÉDICAL EN MU",
+        text: "Au SAU, lorsque vous y repensez, vous vous souvenez que le chiffre de SpO2 communiqué au sujet d'un patient par l'infirmier était de 93 %, ce que vous aviez attribué à une erreur de mesure en raison des tremblemtms présentés par la patiente. A posteriori, quel jugement portez-vous sur votre hypothèse initiale ?",
+        options: [
+            { text: "Elle aurait dû vous conduire à la vérifier, au regard des autres causes possibles de dyspnée chez le sujet jeune", correct: true },
+            { text: "Elle fait partie des hypothèses qu'il ne faut jamais générer dans un service d'urgence", correct: false },
+            { text: "Elle n'était pas pertinente au regard de ce que vous aviez vu en rentrant dans le box", correct: false },
+            { text: "Elle a été générée trop tôt dans la prise en charge de la patiente", correct: false },
+            { text: "Elle aurait dû être accompagnée de toutes les autres hypothèses possibles face à une jeune patiente dyspnéique", correct: false }
+        ]
+    },
+    {
+        category: "RAISONNEMENT MÉDICAL EN MU",
+        text: "Le rapport de vraisemblance positif (RV+ ou LR+) d'un test biologique",
+        options: [
+            { text: "est >10 pour le test \"hyperleucocytose à PNN\" dans la suspicion d'appendicite", correct: false },
+            { text: "dépend de la prévalence de la pathologie étudiée", correct: false },
+            { text: "indique dans quelle mesure un test positif augmente la probabilité de la pathologie étudiée", correct: true },
+            { text: "témoigne d'un apport diagnostique très élevée s'il est >10", correct: true },
+            { text: "permet de calculer la probabilité post-test de la pathologie étudiée", correct: true }
+        ]
+    },
+    {
+        category: "RAISONNEMENT MÉDICAL EN MU",
+        text: "La valeur prédictive positive d'un test biologique (VPP)",
+        options: [
+            { text: "est plus élevée si la prévalence de la pathologie étudiée est haute", correct: true },
+            { text: "est la probabilité d'avoir un test positif quand on est malade", correct: false },
+            { text: "est la probabilité d’être malade si le test est positif", correct: true },
+            { text: "est plus élevée si la prévalence de la pathologie étudiée est faible", correct: false },
+            { text: "est le rapport entre les vrais positifs et les vrais positifs + faux positifs", correct: true }
+        ]
+    },
+    {
+        category: "RAISONNEMENT MÉDICAL EN MU",
+        text: "Un bilan biologique est indiqué aux urgences:",
+        options: [
+            { text: "Pour confirmer certaines hypothèses diagnostiques", correct: true },
+            { text: "Pour tout patient médical", correct: false },
+            { text: "Pour toute douleur thoracique", correct: false },
+            { text: "Pour éliminer certaines hypothèses diagnostiques", correct: true },
+            { text: "pour un abcès axillaire", correct: false }
+        ]
+    },
+    {
+        category: "RAISONNEMENT MÉDICAL EN MU",
+        text: "Pour créer et tester un score il faut",
+        options: [
+            { text: "le tester dans une autre population que celle sur laquelle il a été validé", correct: true },
+            { text: "utiliser une cohorte de dérivation pour la validation externe", correct: false },
+            { text: "utiliser une cohorte de dérivation pour en trouver les composantes", correct: true },
+            { text: "utiliser une cohorte de validation pour la validation interne", correct: false },
+            { text: "trouver des variables indépendamment associées au critère", correct: true }
+        ]
+    },
+    {
+        category: "RAISONNEMENT MÉDICAL EN MU",
+        text: "L'aire sous la courbe ROC d'un score",
+        options: [
+            { text: "permet d'estimer la discrimination globale", correct: true },
+            { text: "dépend de la prévalence de la maladie", correct: false },
+            { text: "permet de trouver un seuil optimal", correct: true },
+            { text: "permet d'estimer la sensibilité", correct: false },
+            { text: "permet d'estimer la spécificité", correct: false }
+        ]
+    },
+
+    // ================= STATUT DES PRATICIENS =================
+    {
+        category: "STATUT DES PRATICIENS",
+        text: "Concernant le statut de praticien hospitalier",
+        options: [
+            { text: "Un PH qui devient chef de service change de statut", correct: false },
+            { text: "Seuls les candidats reçus au concours de PH peuvent s’inscrire au Conseil de l’Ordre", correct: false },
+            { text: "La nomination d’un PH se fait sous la signature du Ministre de la Santé", correct: false },
+            { text: "Un PH est embauché dans un hôpital sur proposition du chef de pôle et signature du Directeur de l’hôpital", correct: true },
+            { text: "Ce statut est réservé aux anesthésistes réanimateurs et aux urgentistes", correct: false }
+        ]
+    },
+    {
+        category: "STATUT DES PRATICIENS",
+        text: "Le poste d'assistant des hôpitaux",
+        options: [
+            { text: "Comprend une part d'activité enseignement et recherche", correct: false },
+            { text: "Est proposé pour 1 ou 2 ans", correct: true },
+            { text: "Est un poste de chef de clinique", correct: false },
+            { text: "Est un poste titulaire", correct: false },
+            { text: "Est financé par l'ARS", correct: false }
+        ]
+    },
+    {
+        category: "STATUT DES PRATICIENS",
+        text: "Les postes universitaires",
+        options: [
+            { text: "Donnent aussi droit à des RTT", correct: false },
+            { text: "Sont tous des postes titulaires", correct: false },
+            { text: "Sont financés par l'université", correct: true },
+            { text: "Comportent 1/3 de leur temps dédié à la recherche", correct: false },
+            { text: "Comportent 1/3 de leur temps dédié à l'enseignement", correct: false }
+        ]
+    },
+    {
+        category: "STATUT DES PRATICIENS",
+        text: "Parmi les postes suivants, lesquels sont considérés comme des postes titulaires ?",
+        options: [
+            { text: "Chef de clinique assistant", correct: false },
+            { text: "Assistant", correct: false },
+            { text: "MCU PH", correct: true },
+            { text: "Praticien hospitalier", correct: true },
+            { text: "Praticien hospitalier contractuel", correct: false }
+        ]
+    },
+    {
+        category: "STATUT DES PRATICIENS",
+        text: "Le concours de Praticien Hospitalier (PH)",
+        options: [
+            { text: "Est le seul moyen d'acquérir un statut de PH", correct: true },
+            { text: "Est organisé annuellement", correct: true },
+            { text: "Se passe dans sa faculté d'origine", correct: false },
+            { text: "Comporte forcément un entretien avec le jury", correct: true },
+            { text: "Comporte forcément un cas clinique (sur une pathologie dans la spécialité concernée)", correct: false }
+        ]
+    },
+
+    // ================= CODAGE MÉDICAL =================
+    {
+        category: "CODAGE MÉDICAL",
+        text: "La CIM 10 :",
+        options: [
+            { text: "Est une classification des maladies par spécialité d’organe", correct: true },
+            { text: "Existe sous forme de classification pronostique", correct: false },
+            { text: "Permet de juger de la consommation de ressources aux Urgences", correct: false },
+            { text: "Comporte environ 2 000 items", correct: false },
+            { text: "Est mise à jour chaque année en fonction des avancées de la recherche médicale", correct: false }
+        ]
+    },
+    {
+        category: "CODAGE MÉDICAL",
+        text: "Le résumé de passage aux urgences (RPU) est transmis :",
+        options: [
+            { text: "Aux services épidémiologiques nationaux", correct: true },
+            { text: "Au médecin traitant du patient", correct: false },
+            { text: "Au service hospitalier qui accueille le patient en cas d’hospitalisation", correct: false },
+            { text: "A l’ARS de Région", correct: true },
+            { text: "Au Directeur de l’hôpital", correct: false }
+        ]
+    },
+    {
+        category: "CODAGE MÉDICAL",
+        text: "Le codage GEMSA :",
+        options: [
+            { text: "A pour but de comparer la charge de travail entre des services d’urgence", correct: true },
+            { text: "Comprend des items tous « distinctement séparés »", correct: false },
+            { text: "Décrit la gravité du malade à l’arrivée aux Urgences", correct: false },
+            { text: "Prend en compte la consommation de ressources aux urgences", correct: true },
+            { text: "Peut être réalisé en SMUR aussi bien qu’aux Urgences", correct: false }
+        ]
+    },
+    {
+        category: "CODAGE MÉDICAL",
+        text: "Le codage « CCMU » :",
+        options: [
+            { text: "Peut être réalisé en SMUR aussi bien qu’aux Urgences", correct: true },
+            { text: "A pour but de comparer la charge de travail entre des services d’urgence", correct: true },
+            { text: "Comprend des items tous « distinctement séparés »", correct: false },
+            { text: "Décrit la gravité du malade à l’arrivée aux Urgences", correct: true },
+            { text: "Prend en compte la consommation de ressources aux urgences", correct: true }
+        ]
+    },
+    {
+        category: "CODAGE MÉDICAL",
+        text: "RPU signifie :",
+        options: [
+            { text: "Récapitulatif Post-Urgence", correct: false },
+            { text: "Recensement de la Pertinence des Urgences", correct: false },
+            { text: "Répertoire Public des Urgences", correct: false },
+            { text: "Recueil Prospectif aux Urgences", correct: false },
+            { text: "Résumé de Passage aux Urgences", correct: true }
+        ]
+    },
+
+    // ================= RESPONSABILITÉ =================
+    {
+        category: "RESPONSABILITÉ",
+        text: "Concernant l’organisation du système judiciaire français :",
+        options: [
+            { text: "Une décision du Tribunal Administratif peut être contestée en appel", correct: true },
+            { text: "En cas de jugement annulé par une Cour de Cassation, le plaignant est débouté.", correct: false },
+            { text: "Il existe une chambre d’appel quelle que soit l’infraction initiale", correct: false },
+            { text: "La Cour d’Assise est un tribunal pénal", correct: true },
+            { text: "Une décision disciplinaire ordinale peut être contestée en appel", correct: true }
+        ]
+    },
+    {
+        category: "RESPONSABILITÉ",
+        text: "Le Conseil de l’Ordre des Médecins dispose d’une chambre disciplinaire compétente pour juger :",
+        options: [
+            { text: "Une plainte d’un patient envers une société d’ambulances", correct: false },
+            { text: "Une plainte d’un patient envers un personnel paramédical", correct: false },
+            { text: "Une plainte d’un patient envers un médecin hospitalier", correct: true },
+            { text: "Une plainte d’un patient envers son médecin traitant", correct: true },
+            { text: "Une plainte d’un praticien envers un autre praticien", correct: true }
+        ]
+    },
+    {
+        category: "RESPONSABILITÉ",
+        text: "Un patient qui s’estime victime d’une erreur de diagnostic avec préjudice lié à une prise en charge par un médecin urgentiste travaillant dans un hôpital public peut saisir (une ou plusieurs réponses possibles) :",
+        options: [
+            { text: "Le Conseil de l’Ordre des médecins", correct: true },
+            { text: "Le médiateur de la république", correct: false },
+            { text: "Le Tribunal pénal", correct: true },
+            { text: "Le Tribunal civil", correct: false },
+            { text: "Le Tribunal administratif", correct: true }
+        ]
+    },
+    {
+        category: "RESPONSABILITÉ",
+        text: "Un patient qui s’estime victime d’une erreur d’injection de médicament par un infirmier n’ayant pas respecté la prescription médicale d’un médecin urgentiste dans un hôpital public peut saisir (une ou plusieurs réponses possibles) :",
+        options: [
+            { text: "Déposer une plainte auprès d’un avocat de son choix", correct: false },
+            { text: "Déposer une plainte auprès du Conseil de l’Ordre des Médecins", correct: false },
+            { text: "Déposer une plainte auprès du Directeur de l’hôpital", correct: true },
+            { text: "Déposer une plainte auprès du Tribunal Administratif", correct: false },
+            { text: "Déposer une plainte auprès du Procureur de la République", correct: true }
+        ]
+    },
+    {
+        category: "RESPONSABILITÉ",
+        text: "Un patient mécontent de sa prise en charge aux Urgences d’un hôpital public peut :",
+        options: [
+            { text: "S’adresser au Conseil de l’Ordre des médecins", correct: true },
+            { text: "Faire déposer plainte par une association de patients", correct: false },
+            { text: "Faire publier un récit des faits dans un journal", correct: true },
+            { text: "Déposer une plainte au Tribunal administratif", correct: true },
+            { text: "S’adresser au Directeur de l’hôpital", correct: true }
+        ]
+    },
+
+    // ================= RELATION MÉDECIN PATIENT =================
+    {
+        category: "RELATION MÉDECIN PATIENT",
+        text: "Vous êtes appelés avec le SMUR au domicile de Monsieur Raymond T . ,78 ans, pour détresse respiratoire aiguë. Son épouse, qui a appelé le Centre 15 est présente sur les lieux avec son fils. A votre arrivée, le patient est inconscient et en gasps dans sa chambre. Vous débutez une réanimation cardio-pulmonaire. Celle-ci se révèle inefficace. Vous interrompez la procédure et vous vous préparez à annoncer le décès à sa famille. Que faites vous et/ou que dites vous parmi les propositions suivantes ?",
+        options: [
+            { text: "Vous dites « nous sommes arrivés trop tard »", correct: false },
+            { text: "Vous dites « votre mari n’est plus, il nous a quitté ».", correct: false },
+            { text: "Vous dites « il était en arrêt cardiorespiratoire, il n’a pu être réanimé »", correct: false },
+            { text: "Vous dites « votre mari, votre père est mort »", correct: true },
+            { text: "Vous sortez de l’appartement et vous annoncez le décès sur le palier", correct: false }
+        ]
+    },
+    {
+        category: "RELATION MÉDECIN PATIENT",
+        text: "Un patient suivi en oncologie, sous chimiothérapie, dans votre établissement, consulte aux urgences pour grande asthénie. Il est pâle. Une numération formule sanguine est réalisée. Les résultats sont les suivants : hémoglobine 7,5 g/dl, leucocytes 1 800 G/L et plaquettes 45 000 G/L. Vous lui présentez les résultats ainsi « Monsieur les résultats dans votre situation sont rassurants. Les globules rouges sont normaux, la concentration des granulocytes et des lymphocytes à peine abaissée. Les thrombocytes sont en quantité rassurante ». Quel(s) est (sont) le (les) mécanisme(s) de défense développé(s) ici par le médecin dans sa relation avec le patient ?",
+        options: [
+            { text: "la fuite en avant", correct: false },
+            { text: "la rationalisation", correct: true },
+            { text: "la fausse assurance", correct: true },
+            { text: "le mensonge", correct: true },
+            { text: "la banalisation", correct: true }
+        ]
+    },
+    {
+        category: "RELATION MÉDECIN PATIENT",
+        text: "Parmi les propositions suivantes, quelle(s) est (sont) celle(s) qui démontrent qu’en médecine d’urgence, on passe aisément d’une éthique déontologique à une éthique téléologique ?",
+        options: [
+            { text: "Le médecin met en œuvre, pour un patient présent, tous les moyens disponibles quelle que soit leur efficacité", correct: false },
+            { text: "Le médecin met en jeu sa responsabilité et se voit attribuer des objectifs de rationalisation des moyens.", correct: true },
+            { text: "Le médecin met en œuvre des procédures fondées sur le devoir", correct: false },
+            { text: "Le médecin met en œuvre, pour un patient présent, seulement les moyens ayant fait preuve de leur efficacité", correct: true },
+            { text: "Le médecin prend en charge chacun des patients avant de considérer l’ensemble des patients en salle", correct: false }
+        ]
+    },
+    {
+        category: "RELATION MÉDECIN PATIENT",
+        text: "Un patient suivi en oncologie, sous chimiothérapie, dans votre établissement, consulte aux urgences pour grande asthénie, accompagné de son épouse. Il est pâle. Une numération formule sanguine est réalisée. Les résultats sont les suivants : hémoglobine 5,5 g/dl, leucocytes 1 800 G/L et plaquettes 45 000 G/L. Vous lui présentez les résultats ainsi qu’à son épouse. Le patient laisse commenter les résultats par son épouse. Il est impassible par rapport aux commentaires faits à propos de la nécessité d’une transfusion. Par contre il vous rappelle comme la dernière fois des douleurs ressenties au pied droit, douleurs résiduelles d’une « vieille » entorse. Quel(s) est (sont) le (les) mécanisme(s) de défense développé(s) ici par le patient dans sa relation avec le médecin ?",
+        options: [
+            { text: "le déni", correct: true },
+            { text: "la régression", correct: true },
+            { text: "le déplacement", correct: true },
+            { text: "la projection agressive", correct: false },
+            { text: "l'isolation", correct: false }
+        ]
+    },
+
+    // ================= MAUVAISE NOUVELLE =================
+    {
+        category: "MAUVAISE NOUVELLE",
+        text: "A propos de l’annonce d’une mauvaise nouvelle, parmi les propositions suivantes, quelle(s) est (sont) le (les) principe(s) qui doit (doivent) être obligatoirement respecté(s) ?",
+        options: [
+            { text: "proposer au patient d’être accompagné si cela est possible", correct: false },
+            { text: "même si le temps est très court l’annonce doit être faîte", correct: false },
+            { text: "une seule personne doit faire l’annonce", correct: true },
+            { text: "annoncer le diagnostic dès qu’il est suspecté", correct: false },
+            { text: "informer le patient précocement", correct: false }
+        ]
+    },
+    {
+        category: "MAUVAISE NOUVELLE",
+        text: "A propos de l’annonce d'une mauvaise nouvelle, parmi les propositions suivantes, quelle(s) est (sont) l’ (les) étape(s) qui doit (doivent) être respecté(s) ?",
+        options: [
+            { text: "avoir des mouchoirs à disposition", correct: true },
+            { text: "associer le patient aux décisions à prendre", correct: true },
+            { text: "ne pas hésiter à utiliser des termes techniques", correct: false },
+            { text: "s’installer dans un endroit le plus calme possible", correct: true },
+            { text: "ne pas montrer les preuves du diagnostic (scanner par exemple)", correct: false }
+        ]
+    },
+
+    // ================= CULTURE SÉCURITÉ ERREURS =================
+    {
+        category: "CULTURE SÉCURITÉ ERREURS",
+        text: "Pour limiter le risque d'erreur, on peut recommander",
+        options: [
+            { text: "De limiter au maximum les transmission d'informations aux autres médecins", correct: false },
+            { text: "D'utiliser des protocoles pour les transmissions médicales", correct: true },
+            { text: "De respecter le temps de travail maximum", correct: true },
+            { text: "D'utiliser des checklistes pour les procédures à risque", correct: true },
+            { text: "De limiter la part informatique dans notre activité médicale", correct: false }
+        ]
+    },
+    {
+        category: "CULTURE SÉCURITÉ ERREURS",
+        text: "Un événement indésirable",
+        options: [
+            { text: "Peut être évitable", correct: true },
+            { text: "Est forcément associé à un dommage corporel", correct: false },
+            { text: "Est la conséquence d'une faute médicale", correct: false },
+            { text: "A forcément touché le patient", correct: false },
+            { text: "Peut être la conséquence d'une erreur médicale", correct: true }
+        ]
+    },
+
+    // ================= GESTION STRUCTURE URGENCE =================
+    {
+        category: "GESTION STRUCTURE URGENCE",
+        text: "La surcharge de la structure d'urgence (SU) peut avoir pour conséquences :",
+        options: [
+            { text: "Une augmentation de la morbidité des patients consultants en SU", correct: true },
+            { text: "Une augmentation de la mortalité des patients consultants en SU", correct: true },
+            { text: "Une augmentation des sorties contre avis médical à partir de la SU", correct: true },
+            { text: "Une diminution des sorties contre avis médical à partir de la SU", correct: false },
+            { text: "Une augmentation de la morbidité des patients rentrant à domicile à partir de la SU", correct: true }
+        ]
+    },
+    {
+        category: "GESTION STRUCTURE URGENCE",
+        text: "Les patients en situation de boarding sont :",
+        options: [
+            { text: "Des patients admis en structure des urgences (SU), dont la prise en charge en SU est terminée, mais qui restent dans les locaux de la SU", correct: true },
+            { text: "Des patients sous la responsabilité des médecins urgentistes", correct: true },
+            { text: "Des patients en attente d'un lit d'hospitalisation", correct: true },
+            { text: "Des patients de médecine hospitalisés dans des services de chirurgie", correct: false },
+            { text: "Des patients en attente d'être pris en charge par un urgentiste en SU", correct: false }
+        ]
+    },
+    {
+        category: "GESTION STRUCTURE URGENCE",
+        text: "Quelles sont les causes possibles de la surcharge de la structure d'urgence (SU)",
+        options: [
+            { text: "Faible nombre de lits d'hospitalisation disponibles", correct: true },
+            { text: "Organisation de l’hospitalisation programmée inadaptée", correct: true },
+            { text: "Refus des services à accueillir le patient", correct: true },
+            { text: "Nombre d’entrées en SU trop important", correct: true },
+            { text: "Délai important d'obtention des examens paracliniques", correct: true }
+        ]
+    },
+    {
+        category: "GESTION STRUCTURE URGENCE",
+        text: "Quelles sont les conséquences possibles de la surcharge de la structure d'urgence (SU) :",
+        options: [
+            { text: "Une surcharge des services d'hospitalisations", correct: true },
+            { text: "Une surcharge de la médecine de ville", correct: false },
+            { text: "Une diminution du pourcentage d'erreurs médicales chez les patients en SU", correct: false },
+            { text: "Une diminution du pourcentage d'erreurs médicales chez les patients hospitalisés", correct: false },
+            { text: "Une augmentation de la morbimortalité des patients en SU", correct: true }
+        ]
+    },
+    {
+        category: "GESTION STRUCTURE URGENCE",
+        text: "Quelles sont les solutions possibles de la surcharge de la structure d'urgence (SU) :",
+        options: [
+            { text: "Faciliter l’accès externe aux spécialistes et au plateau technique", correct: true },
+            { text: "Aider au maintien à domicile des patients fragiles", correct: true },
+            { text: "Créer un circuit court", correct: true },
+            { text: "Suivre un tableau de bord d’indicateurs", correct: true },
+            { text: "Favoriser une régulation médico-administrative", correct: true }
+        ]
+    },
+
+    // ================= RECOMMANDATIONS =================
+    {
+        category: "RECOMMANDATIONS",
+        text: "A propos du niveau des recommandations, quelle(s) est(sont) l’(les) affirmation(s) qui s’applique(nt) à une recommandation de classe II ?",
+        options: [
+            { text: "Les données des études supportent l’intérêt du traitement ou de la procédure en question, et il est recommandé de l’appliquer", correct: false },
+            { text: "Les données des études sont en défaveur du traitement ou de la procédure en question, et il est recommandé de ne pas l’appliquer", correct: false },
+            { text: "Les données des études sont limitées ou divergentes sur l’intérêt du traitement ou de la procédure en question, et il est suggéré de l’appliquer", correct: true },
+            { text: "La recommandation en question est basée sur plusieurs études randomisées de bonne qualité méthodologiques", correct: false },
+            { text: "La recommandation en question vise à rationaliser les dépenses de santé", correct: false }
+        ]
+    },
+    {
+        category: "RECOMMANDATIONS",
+        text: "Il est possible d’accéder aux recommandations en Médecine d’Urgence (au moins leur résumés) par les moyens suivant:",
+        options: [
+            { text: "Le site de la Haute Autorité de Santé", correct: true },
+            { text: "Le site de la Société Française de Médecine d’Urgence si on n’est pas membre de la SFMU", correct: true },
+            { text: "La Cochrane library via le site de la Société Française de Médecine d’Urgence si on est membre de la SFMU", correct: true },
+            { text: "Des sites spécifiques comme SUMSearch 2", correct: true },
+            { text: "PubMed en utilisant un filtre", correct: true }
+        ]
+    },
+    {
+        category: "RECOMMANDATIONS",
+        text: "Lors d’une prise en charge non conforme aux recommandations, quels sont les raisons qui peuvent conduire à une mise en cause de la pratique médicale voire une condamnation au tribunal administratif ?",
+        options: [
+            { text: "Ne pas avoir appliquer la recommandation qui s’imposait au médecin urgentiste", correct: false },
+            { text: "Ne pas connaître la recommandation qui fait partie du champ des compétences de sa spécialité", correct: true },
+            { text: "Ne pas avoir argumenté sa décision", correct: true },
+            { text: "Ne pas avoir échangé et expliqué au patient sa décision", correct: true },
+            { text: "Ne pas avoir contacté les spécialistes possiblement impliqués dans le suivi du patient", correct: false }
+        ]
+    },
+    {
+        category: "RECOMMANDATIONS",
+        text: "Parmi les qualifications suivantes, quelles sont celles qui s’appliquent ou peuvent s’appliquer aux recommandations en Médecine d’Urgence ?",
+        options: [
+            { text: "Approche scientifique", correct: true },
+            { text: "Champ limité", correct: true },
+            { text: "Toujours applicable", correct: false },
+            { text: "Élaboration longue", correct: true },
+            { text: "Péremption possible", correct: true }
+        ]
+    },
+    {
+        category: "RECOMMANDATIONS",
+        text: "Quelle(s) est(sont) l’(les) affirmation(s) qui s’applique(nt) à l’ASMR ?",
+        options: [
+            { text: "ASMR= Agence de Santé des Moyens et des Risques", correct: false },
+            { text: "ASMR= Analyse Statistique et Modélisation des Risques", correct: false },
+            { text: "Elle est établie par comparaison à un produit de référence", correct: true },
+            { text: "Elle vise à déterminer le niveau de remboursement", correct: false },
+            { text: "Elle vise à déterminer le prix d’un médicament", correct: true }
+        ]
+    },
+    // ================= EBM =================
+    {
+        category: "EBM",
+        text: "Concernant l'ordre chronologique des étapes de la recherche expérimentale, veuillez indiquer la proposition exacte :",
+        options: [
+            { text: "Construction d'une étude – Questionnement et formulation des hypothèses – Réalisation de l'expérience – Publication d'un article original – Interprétation des résultats", correct: false },
+            { text: "Réalisation de l'expérience – Construction d'une étude – Question et formulation des hypothèses – Interprétation des résultats – Publication d'un article original", correct: false },
+            { text: "Questionnement et formulation des hypothèses – Construction de l'étude – Réalisation de l'expérience – Interprétation des résultats – Publication d'un article original", correct: true },
+            { text: "Construction d'une étude – Questionnement et formulation des hypothèses – Réalisation de l'expérience – Publication d'un article original – Interprétation des résultats", correct: false },
+            { text: "Questionnement et formulation des hypothèses – Réalisation de l'expérience – Construction de l'étude - Publication d'un article original – Interprétation des résultats", correct: false }
+        ]
+    },
+    {
+        category: "EBM",
+        text: "Parmi les études suivantes, lesquelles sont celles qui appartiennent par leur type méthodologique, au champ de l’épidémiologie",
+        options: [
+            { text: "Étude de cohorte exposée / non-exposée", correct: true },
+            { text: "Étude du médicament de phase 2", correct: false },
+            { text: "Série de cas", correct: true },
+            { text: "Étude transversale", correct: true },
+            { text: "Étude d’analyse de décision", correct: false }
+        ]
+    },
+    {
+        category: "EBM",
+        text: "Parmi les études suivantes, lesquelles sont de nature « interventionnelle » ?",
+        options: [
+            { text: "Essai clinique randomisé en plan factoriel", correct: true },
+            { text: "Étude d’évaluation d’un examen diagnostique", correct: true },
+            { text: "Étude de cohorte", correct: false },
+            { text: "Audit de pratique", correct: false },
+            { text: "Étude cas témoins", correct: false }
+        ]
+    },
+    {
+        category: "EBM",
+        text: "Parmi les items suivants, quels sont ceux qui définissent l’Evidence Based Medecine ?",
+        options: [
+            { text: "L’habileté gestuelle du praticien (« savoir faire »)", correct: true },
+            { text: "La sélection de données scientifiques de qualité.", correct: false },
+            { text: "L’expertise du praticien en bibliographie", correct: false },
+            { text: "L’expertise clinique du praticien", correct: true },
+            { text: "Les souhaits du patient", correct: true }
+        ]
+    },
+  // ================= EVALUATION PRATIQUES PROFESSIONNELLES =================
+    {
+        category: "EVALUATION PRATIQUES PROFESSIONNELLES",
+        text: "Concernant le choix de la méthode d'évaluation des pratiques professionnelle",
+        options: [
+            { text: "elle doit préciser les modalités de recueil des données", correct: true },
+            { text: "elle doit comporter une marge d'amélioration", correct: true },
+            { text: "elle doit avoir le soutien du plus grand nombre de professionnels sans celui de l'institution", correct: false },
+            { text: "elle peut être réalisée sans objectifs clairs", correct: false },
+            { text: "elle doit être adaptée au sujet", correct: true }
+        ]
+    },
+    {
+        category: "EVALUATION PRATIQUES PROFESSIONNELLES",
+        text: "Quelles sont les propositions exactes concernant l'évaluation des Pratiques Professionnelles",
+        options: [
+            { text: "Elle permet de mener des mesures correctives", correct: true },
+            { text: "Elle repose sur la roue de Deming", correct: true },
+            { text: "Elle est évaluée par l'assurance maladie", correct: false },
+            { text: "Elle permet la mise en œuvre de recommandations de bonnes pratiques", correct: true },
+            { text: "Elle peut être réalisée sans normes connues", correct: false }
+        ]
+    },
+
+    // ================= EDUCATION =================
+    {
+        category: "EDUCATION",
+        text: "Vous aimeriez vous-même utiliser des approches pédagogiques actives avec vos étudiants, par exemple, lorsque vous leur apprenez à intuber. Parmi les stratégies suivantes, lesquelles relèvent de telles approches ?",
+        options: [
+            { text: "Démontrer le geste et demander aux étudiants de le reproduire", correct: false },
+            { text: "Faire le récit d'une situation clinique avant d'aborder le geste en lui-même", correct: true },
+            { text: "Demander aux étudiants de discuter entre eux des indications d'intubation en situation d'urgence et de tomber d'accord", correct: true },
+            { text: "Demander aux étudiants de réfléchir à la dernière fois qu'ils ont vu un médecin intuber en situation d'urgence et d'identifier ce qui leur paraissait difficile", correct: true },
+            { text: "Faire précéder l'apprentissage du geste d'un court exposé théorique", correct: false }
+        ]
+    },
+    {
+        category: "EDUCATION",
+        text: "Comment se nomme cette stratégie pédagogique ?",
+        options: [
+            { text: "La classe inversée", correct: false },
+            { text: "L'approche transmissive", correct: false },
+            { text: "L'exploration des représentations antérieures", correct: true },
+            { text: "La contextualisation", correct: false },
+            { text: "La pratique réflexive", correct: false }
+        ]
+    },
+
+    // ================= REGLEMENTATION EN RECHERCHE =================
+    {
+        category: "REGLEMENTATION EN RECHERCHE",
+        text: "La Commission nationale informatique et libertés :",
+        options: [
+            { text: "Intervient pour les recherches non interventionnelles hors loi Jardé (épidémiologique rétrospective)", correct: true },
+            { text: "Intervient pour les recherches impliquant la personne humaine dans le cadre de la loi Jardé", correct: true },
+            { text: "Peut interdire le recueil et la conservation informatique de certains types de données", correct: true },
+            { text: "S’assure que les patients pourront avoir accès aux données qui les concernent", correct: true },
+            { text: "Peut imposer la conservation des données sous forme de fichiers papiers plutôt que de fichiers informatiques", correct: false }
+        ]
+    },
+    {
+        category: "REGLEMENTATION EN RECHERCHE",
+        text: "Le Comité de protection des personnes :",
+        options: [
+            { text: "Comprend des membres tous issus des professions médicales", correct: false },
+            { text: "A, entre autres, pour missions de juger du rapport bénéfice-risque de la recherche pour les patients inclus", correct: true },
+            { text: "N’a pas à se prononcer sur la validité scientifique du protocole", correct: false },
+            { text: "Doit obligatoirement comporter un méthodologiste-biostatisticien ou épidémiologiste", correct: true },
+            { text: "Donne un avis consultatif à l’HAS (Haute Autorité de Santé)", correct: false }
+        ]
+    },
+    {
+        category: "REGLEMENTATION EN RECHERCHE",
+        text: "La signature d’un consentement à la participation à un protocole de recherche médicale :",
+        options: [
+            { text: "Est inutile si le patient a par ailleurs signé un consentement aux soins", correct: false },
+            { text: "Est obligatoire en cas de recherche interventionnelle à risque et contrainte minime", correct: false },
+            { text: "Est obligatoire « sous forme de consentement « exprès » en cas de recherche non-interventionnelle", correct: false },
+            { text: "Peut (quand elle est requise ) être réalisée par une personne de confiance si le patient est dans le coma", correct: true },
+            { text: "Doit être signé « de la main du patient » en cas de recherche interventionnelle", correct: true }
+        ]
+    },
+    {
+        category: "REGLEMENTATION EN RECHERCHE",
+        text: "La loi Jardé de 2012 distingue différentes catégories de recherche en fonction du risque associé qui sont :",
+        options: [
+            { text: "Recherche non interventionnelle", correct: true },
+            { text: "Recherche épidémiologique", correct: false },
+            { text: "Recherche biomédicale", correct: false },
+            { text: "Recherche interventionnelle", correct: true },
+            { text: "Recherche interventionnelle à risque et contrainte minime", correct: true }
+        ]
+    },
+    {
+        category: "REGLEMENTATION EN RECHERCHE",
+        text: "Le terme « officiel » actuel pour qualifier les recherches scientifiques effectuées en médecine est :",
+        options: [
+            { text: "Recherche interventionnelle", correct: false },
+            { text: "Recherche médico-sociale", correct: false },
+            { text: "Recherche médicale", correct: false },
+            { text: "Recherche biomédicale", correct: false },
+            { text: "Recherche impliquant la personne humaine", correct: true }
+        ]
+    },
+
+    // ================= COMMUNICATION SCIENTIFIQUE =================
+    {
+        category: "COMMUNICATION SCIENTIFIQUE",
+        text: "Avant d'avoir publié mon article, j'avais déjà publié un article sur la méthodologie de cette même étude",
+        options: [
+            { text: "C'est de l'auto-plagiat", correct: false },
+            { text: "Cela permet de confirmer que les hypothèses ont été faites avant le début de l'étude", correct: true },
+            { text: "Seul l'enregistrement sur un registre type clinicaltrial.gov est obligatoire", correct: true },
+            { text: "C'est une bonne chose pour détailler la méthodologie et ne pas prendre trop de place dans l'article principal.", correct: true },
+            { text: "C'est un enregistrement obligatoire pour un essai interventionnel", correct: false }
+        ]
+    },
+    {
+        category: "COMMUNICATION SCIENTIFIQUE",
+        text: "Les personnes suivantes peuvent justifier d'être co-auteur d'un article si ils ont :",
+        options: [
+            { text: "Uniquement obtenu les financements de l'étude", correct: false },
+            { text: "Réalisé l'analyse statistique, écrit la partie statistique de l'article et approuvé la version finale de l'article", correct: true },
+            { text: "Inclus la quasi-totalité des malades sans participer à l'écriture ni à la lecture de l'article", correct: false },
+            { text: "Inclus un seul malade, relu l'article en proposant des corrections et approuvé la version finale", correct: true },
+            { text: "Uniquement écrit l'article en entier", correct: false }
+        ]
+    },
+
+    // ================= DEONTOLOGIE =================
+    {
+        category: "DEONTOLOGIE",
+        text: "Le secret médical :",
+        options: [
+            { text: "Est une notion ancienne, déjà évoquée dans le serment d’Hippocrate", correct: true },
+            { text: "Peut entraîner, s’il est violé, une condamnation au Tribunal civil avec dommages et intérêts et même au pénal", correct: true },
+            { text: "Est opposable aux enfants d’un patient", correct: true },
+            { text: "Peut être opposé à un malade atteint d’une maladie grave pour limiter son angoisse", correct: false },
+            { text: "Peut être partagé entre plusieurs médecins impliqués dans le soin d’un patient", correct: true }
+        ]
+    },
+    {
+        category: "DEONTOLOGIE",
+        text: "Le consentement aux soins :",
+        options: [
+            { text: "Est implicite à partir du moment où un patient fait appel à un médecin", correct: false },
+            { text: "Relève de la personne de confiance, ou des proches, si le patient est incapable de s’exprimer", correct: true },
+            { text: "Permet d’inclure le patient dans un protocole de recherche, s’il est directement lié aux soins", correct: false },
+            { text: "Engage la responsabilité du patient à partir du moment où il a donné son accord pour une thérapeutique", correct: false },
+            { text: "Est l’équivalent d’un contrat au plan juridique", correct: false }
+        ]
+    },
+    {
+        category: "DEONTOLOGIE",
+        text: "Concernant l’information donnée aux patients :",
+        options: [
+            { text: "Elle doit être autant que possible délivrée en présence des proches", correct: false },
+            { text: "En cas de plainte du patient, seuls les éléments écrits dans le dossier du patient seront pris en compte par le juge", correct: false },
+            { text: "Elle peut être incomplète en cas de pathologie nécessitant un traitement urgent", correct: true },
+            { text: "Elle a pour but d'entraîner leur adhésion aux soins proposés par le praticien", correct: true },
+            { text: "Aux Urgences, il est largement préférable de ne pas évoquer les diagnostics associés à un pronostic potentiellement fatal", correct: false }
+        ]
+    },
+    {
+        category: "DEONTOLOGIE",
+        text: "Le Conseil de l’Ordre des Médecins :",
+        options: [
+            { text: "Comprend pour moitié des membres élus et pour moitié des membres nommés par le préfet de région", correct: false },
+            { text: "A, parmi ses missions, le rôle de défendre la moralité de la profession médicale", correct: true },
+            { text: "Rédige des textes qui sont intégrés au Code de santé publique", correct: true },
+            { text: "Est une institution mise en place dans les suites de la Révolution française", correct: false },
+            { text: "Est sous l’autorité directe du Ministre de la sant", correct: false }
+        ]
+    },
+    {
+        category: "DEONTOLOGIE",
+        text: "Parmi les dérogations au secret médical, on peut retenir :",
+        options: [
+            { text: "La nécessité d’informer les parents pour un enfant de moins de 10 ans", correct: true },
+            { text: "En cas de blessure par balle", correct: false },
+            { text: "Une maltraitance commise sur un patient vulnérable", correct: true },
+            { text: "Pour les patients présentant un coma dans des circonstances mal élucidées", correct: false },
+            { text: "Pour la déclaration aux autorités de santé d’une tuberculose", correct: true }
+        ]
+    },
+  
 ];
 
 // ════════════════════════════════════════════════════
