@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entraînement QCM Médecine</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        h1 { text-align: center; color: #2c3e50; }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .form-group { margin-bottom: 15px; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #2980b9; }
+        button:disabled { background-color: #95a5a6; cursor: not-allowed; }
+        
+        /* Styles pour les questions */
+        .question-title { font-size: 1.1em; color: #2c3e50; margin-bottom: 15px; }
+        .options { list-style-type: none; padding: 0; }
+        .options li {
+            margin: 8px 0;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+        .options label { font-weight: normal; margin: 0; cursor: pointer; display: flex; align-items: center;}
+        .options input { margin-right: 10px; transform: scale(1.2); }
+        
+        /* Couleurs de correction */
+        .correct { background-color: #d4edda !important; border-color: #c3e6cb !important; color: #155724; }
+        .incorrect { background-color: #f8d7da !important; border-color: #f5c6cb !important; color: #721c24; }
+        .missed { background-color: #fff3cd !important; border-color: #ffeeba !important; color: #856404; }
+        
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <h1>📚 QCM Médecine</h1>
+
+    <div class="card" id="setup-section">
+        <h2>Configuration de la session</h2>
+        
+        <div class="form-group">
+            <label for="category-select">Choisir une catégorie :</label>
+            <select id="category-select">
+                <option value="Toutes">Toutes les catégories</option>
+                </select>
+        </div>
+
+        <div class="form-group">
+            <label for="random-count">Ou lancer un nombre de questions aléatoires (laisser vide pour tout faire) :</label>
+            <input type="number" id="random-count" placeholder="Ex: 10" min="1">
+        </div>
+
+        <button onclick="startQuiz()">Lancer les QCM</button>
+    </div>
+
+    <div id="quiz-section" class="hidden">
+        <button onclick="location.reload()" style="margin-bottom: 20px; background-color: #e74c3c;">Retour au menu</button>
+        <div id="questions-container"></div>
+    </div>
+
+    <script>
+        // ==========================================
+        // BASE DE DONNÉES DES QUESTIONS (À COMPLÉTER)
+        // ==========================================
+        const questionsData = [
+            {
+                category: "ORGANISATION EN MU",
+                text: "Concernant l'organisation de la salle des urgences vitales (SAUV) au sein d'une structure des urgences. Veuillez choisir au moins une réponse :",
+                options: [
+                    { text: "Une infirmière doit être dédiée au fonctionnement propre de la SAUV", correct: false },
+                    { text: "Tout le matériel de réanimation doit être présent dans une SAUV", correct: true },
+                    { text: "La SAUV est dans un service d'urgence le lieu d'accueil des patients en détresse vitale potentielle", correct: true },
+                    { text: "La SAUV est le lieu d'accueil des patients en détresse vitale existante", correct: true },
+                    { text: "La Salle d'accueil des urgences vitales (SAUV) peut être située dans un autre service que celui des urgences", correct: false }
+                ]
+            },
+            {
+                category: "SEPSIS",
+                text: "Depuis 2016 et le consensus Sepsis-3, les cas suivants correspondent à la définition de sepsis :",
+                options: [
+                    { text: "Une infection avec un qSOFA > 2", correct: true },
+                    { text: "Une infection avec une insuffisance rénale aiguë sévère", correct: true },
+                    { text: "Une infection avec une hypotension artérielle nécessitant l'introduction de vasopresseurs et une hyperlactatémie", correct: false },
+                    { text: "Une infection associée à une hyperlactatémie", correct: false },
+                    { text: "Une infection associée à une hypotension artérielle", correct: false }
+                ]
+            },
+            {
+                category: "SEPSIS",
+                text: "Quel est le remplissage vasculaire recommandé devant un choc septique ?",
+                options: [
+                    { text: "30 ml/kg le plus vite possible", correct: false },
+                    { text: "500 mL de colloïdes en 3 heures", correct: false },
+                    { text: "Cristalloïdes équilibrés (Ringer lactate) ou sérum physiologique", correct: false },
+                    { text: "1 litre de cristalloïdes en 1 h", correct: false },
+                    { text: "30 ml/kg de cristalloïdes en 3 heures", correct: true }
+                ]
+            }
+            // Ajoute les autres questions ici en copiant ce format exact.
+        ];
+
+        let currentQuestions = [];
+
+        // Initialisation du menu déroulant des catégories
+        window.onload = () => {
+            const categories = [...new Set(questionsData.map(q => q.category))];
+            const select = document.getElementById('category-select');
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                select.appendChild(option);
+            });
+        };
+
+        // Lancement du quiz
+        function startQuiz() {
+            const category = document.getElementById('category-select').value;
+            const randomCount = document.getElementById('random-count').value;
+
+            // Filtrage par catégorie
+            let filtered = category === "Toutes" ? [...questionsData] : questionsData.filter(q => q.category === category);
+
+            // Mélange et sélection aléatoire si demandé
+            if (randomCount && randomCount > 0) {
+                filtered = filtered.sort(() => 0.5 - Math.random()).slice(0, randomCount);
+            }
+
+            if (filtered.length === 0) {
+                alert("Aucune question trouvée pour ces critères.");
+                return;
+            }
+
+            currentQuestions = filtered;
+            document.getElementById('setup-section').classList.add('hidden');
+            document.getElementById('quiz-section').classList.remove('hidden');
+            
+            renderQuestions();
+        }
+
+        // Affichage des questions
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+
+            currentQuestions.forEach((q, qIndex) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                let html = `<div class="question-title"><strong>Q${qIndex + 1} [${q.category}]</strong> : ${q.text}</div>`;
+                html += `<ul class="options">`;
+                
+                q.options.forEach((opt, optIndex) => {
+                    html += `
+                        <li id="li-${qIndex}-${optIndex}">
+                            <label>
+                                <input type="checkbox" name="q${qIndex}" value="${optIndex}">
+                                ${opt.text}
+                            </label>
+                        </li>
+                    `;
+                });
+                
+                html += `</ul>`;
+                html += `<button id="btn-${qIndex}" onclick="validateAnswer(${qIndex})">Valider cette question</button>`;
+                
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        // Validation immédiate d'une question
+        function validateAnswer(qIndex) {
+            const question = currentQuestions[qIndex];
+            const checkboxes = document.querySelectorAll(`input[name="q${qIndex}"]`);
+            
+            checkboxes.forEach((checkbox, optIndex) => {
+                const li = document.getElementById(`li-${qIndex}-${optIndex}`);
+                const isChecked = checkbox.checked;
+                const isCorrect = question.options[optIndex].correct;
+
+                // Application des classes CSS pour la correction
+                if (isChecked && isCorrect) {
+                    li.classList.add('correct'); // Vrai positif (Vert)
+                } else if (isChecked && !isCorrect) {
+                    li.classList.add('incorrect'); // Faux positif (Rouge)
+                } else if (!isChecked && isCorrect) {
+                    li.classList.add('missed'); // Faux négatif (Jaune - aurait dû être coché)
+                }
+
+                // Désactiver la case à cocher pour empêcher la modification
+                checkbox.disabled = true;
+            });
+
+            // Désactiver le bouton de validation
+            const btn = document.getElementById(`btn-${qIndex}`);
+            btn.disabled = true;
+            btn.textContent = "Corrigé !";
+        }
+    </script>
+</body>
+</html>
