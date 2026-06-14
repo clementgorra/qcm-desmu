@@ -757,7 +757,7 @@ const questionsData = [
         text: "Question 5 - Chez un homme de 55 ans avec un SCA ST + antérieur à 90 minutes du début de la douleur (hors contre-indication à un traitement) :",
         options: [
             { text: "la fibrinolyse est une bonne option", correct: true },
-            { text: "l'angioplastie primaire est le seul traitement adapté", correct: true },
+            { text: "l'angioplastie primaire est le seul traitement adapté", correct: false },
             { text: "la fibrinolyse est proscrite", correct: false },
             { text: "la fibrinolyse proscrit une angioplastie pendant 3 heures", correct: false },
             { text: "l'angioplastie primaire est une bonne option", correct: true }
@@ -771,7 +771,7 @@ const questionsData = [
         options: [
             { text: "évaluation de la probabilité clinique", correct: true },
             { text: "évaluation des délais d’orientation vers un centre de cardiologie interventionnelle", correct: true },
-            { text: "évaluation de la probabilité clinique", correct: false },
+            { text: "choix de la stratégrie de revascularisation (angio ou thrombolyse)", correct: false },
             { text: "évaluation des délais de revascularisation", correct: true },
             { text: "évaluation du risque pronostique", correct: true }
         ]
@@ -884,7 +884,7 @@ const questionsData = [
         text: "Question 2 - Concernant l'insuffisance cardiaque aiguë (ICA) donner les réponses justes ?",
         options: [
             { text: "Les 3 principaux facteurs déclenchants sont l'arythmie, l'infection et le SCA", correct: true },
-            { text: "La principale cause d'une insuffisance cardiaque droite est l'embolie pulmonaire", correct: true },
+            { text: "La principale cause d'une insuffisance cardiaque droite est l'embolie pulmonaire", correct: false },
             { text: "L'ICA hypertensive représente environ 40% des présentations cliniques du syndrome d'ICA (SICA)", correct: true },
             { text: "Tout asthme débutant chez le soixantenaire doit être considéré comme une insuffisance cardiaque jusqu'à preuve du contraire", correct: true },
             { text: "La turgescence jugulaire signe l'insuffisance cardiaque droite", correct: true }
@@ -930,10 +930,10 @@ const questionsData = [
         text: "Question 1 - Concernant la fibrillation atriale, donner les réponses justes :",
         options: [
             { text: "Les ondes P sont irrégulières", correct: false },
-            { text: "La FC est toujours supérieure à 100 bpm", correct: true },
+            { text: "La FC est toujours supérieure à 100 bpm", correct: false },
             { text: "Elle peut être déclenchée par une intoxication éthylique aiguë", correct: true },
             { text: "Les complexes QRS sont toujours fins", correct: false },
-            { text: "En cas de BAV complet, l'espace RR est constant", correct: false }
+            { text: "En cas de BAV complet, l'espace RR est constant", correct: true }
         ]
     },
     {
@@ -954,7 +954,7 @@ const questionsData = [
             { text: "Le traitement par héparine est nécessaire avant traitement par un anticoagulant direct par voie orale", correct: false },
             { text: "L'amiodarone peut réduire une FA", correct: true },
             { text: "La digoxine peut réduire une FA", correct: false },
-            { text: "La prévention des embolies systémiques par anticoagulant est systématique", correct: true },
+            { text: "La prévention des embolies systémiques par anticoagulant est systématique", correct: false },
             { text: "Les anticoagulants directs par voie orale procurent moins de complications hémorragiques cérébrales que les AVK", correct: true }
         ]
     },
@@ -1108,130 +1108,6 @@ const questionsData = [
         ]
     },
     // ================= ORGANISATION INTRA HOSPITALIERE =================
-    {
-        category: "ORGANISATION INTRA HOSPITALIERE",
-        text: "Concernant l'organisation de la salle des urgences vitales (SAUV) au sein d'une structure des urgences",
-        options: [
-            { text: "Une infirmière doit être dédiée au fonctionnement propre de la SAUV", correct: false },
-            { text: "Tout le matériel de réanimation doit être présent dans une SAUV", correct: true },
-            { text: "La SAUV est dans un service d'urgence le lieu d'accueil des patients en détresse vitale potentielle", correct: true },
-            { text: "La SAUV est le lieu d'accueil des patients en détresse vitale existante", correct: true },
-            { text: "La Salle d'accueil des urgences vitales (SAUV) peut être située dans un autre service que celui des urgences", correct: false }
-        ]
-    },
-    {
-        category: "ORGANISATION INTRA HOSPITALIERE",
-        text: "Concernant les services des urgences intra-hospitalières (SU) Veuillez choisir au moins une réponse :",
-        options: [
-            { text: "Un établissement, siège d'un SU, doit posséder un laboratoire de biologie en son sein", correct: false },
-            { text: "Un établissement, siège d'un SU, doit posséder un scanner en son sein", correct: false },
-            { text: "Le temps de passage est un indicateur qui permet, seul, de juger de la fluidité d'un SU", correct: false },
-            { text: "Les difficultés d'hospitalisation d'aval du SU sont corrélées au taux d'occupation des lits de l'établissement", correct: true },
-            { text: "Un établissement, siège d'un SU, doit posséder un poste de radiologie en son sein", correct: true }
-        ]
-    },
-    {
-        category: "ORGANISATION INTRA HOSPITALIERE",
-        text: "Concernant l'organisation intra-hospitalière des urgences Veuillez choisir au moins une réponse :",
-        options: [
-            { text: "La structure des urgences doit assurer les éventuels transferts ou le retour à domicile", correct: true },
-            { text: "L'autorisation est délivrée par le ministère de la santé", correct: false },
-            { text: "La structure des urgences doit assurer la prise en charge diagnostique et thérapeutique", correct: true },
-            { text: "La présence d’une infirmière organisatrice (IOA) de l'accueil est une obligation légale 24 heures sur 24", correct: false },
-            { text: "La structure des urgences doit posséder un scanner sur place", correct: false }
-        ]
-    },
-    {
-        category: "ORGANISATION INTRA HOSPITALIERE",
-        text: "Concernant l'Unité d'Hospitalisation de Courte Durée (UHCD) des Urgences Veuillez choisir au moins une réponse :",
-        options: [
-            { text: "L'orientation des patients en hospitalisation soit de l'établissement soit par transfert est la seule possible", correct: false },
-            { text: "Elle peut être incluse dans un autre service", correct: false },
-            { text: "Elle peut être située à distance de la zone d'accueil", correct: true },
-            { text: "Elle contient au moins 5 lits", correct: false },
-            { text: "La durée de séjour doit être de moins de 48h", correct: false }
-        ]
-    },
-    {
-        category: "ORGANISATION INTRA HOSPITALIERE",
-        text: "Concernant les urgences intra-hospitalières Veuillez choisir au moins une réponse :",
-        options: [
-            { text: "Une filière rapide de prise en charge améliore le flux des malades les plus graves", correct: true },
-            { text: "Les malades \"psychiatriques\" doivent être accueillis dans une filière spécifiques séparée du reste des urgences", correct: false },
-            { text: "Un psychiatre doit être présent 24h sur 24", correct: false },
-            { text: "La filière traumatologique doit être individualisée", correct: false },
-            { text: "Un filière rapide de prise en charge améliore le flux des malades les plus légers", correct: true }
-        ]
-    },
-
-    // ================= NIVEAUX DE TRI =================
-    {
-        category: "NIVEAUX DE TRI",
-        text: "Reconnaître les niveaux d'urgence revient à :",
-        options: [
-            { text: "Ajuster les effectifs à l'activité", correct: false },
-            { text: "Orienter les AVC vers l'hôpital le plus proche", correct: false },
-            { text: "Décider ou pas de l'intervention d'un SMUR", correct: true },
-            { text: "Stratifier le risque de complications", correct: true },
-            { text: "Réorienter en maison médicale de garde", correct: true }
-        ]
-    },
-    {
-        category: "NIVEAUX DE TRI",
-        text: "Les soins de premiers recours concernent :",
-        options: [
-            { text: "La prévention primaire", correct: true },
-            { text: "L'hospitalisation", correct: false },
-            { text: "L'admission en EHPAD", correct: true },
-            { text: "Le conseil du pharmacien", correct: true },
-            { text: "La consultation du généraliste", correct: true }
-        ]
-    },
-    {
-        category: "NIVEAUX DE TRI",
-        text: "Dans notre système de santé, les soins de premier recours sont assurés par :",
-        options: [
-            { text: "les médecins spécialistes (non généralistes)", correct: false },
-            { text: "les médecins généralistes", correct: true },
-            { text: "les centres de santé", correct: true },
-            { text: "les infirmières hospitalières", correct: false },
-            { text: "les infirmières libérales", correct: true }
-        ]
-    },
-    {
-        category: "NIVEAUX DE TRI",
-        text: "Les soins sont qualifiés de 2ème recours lorsque les patients sont adressés dans le service d'urgence par :",
-        options: [
-            { text: "Un médecin régulateur de la permanence des soins ambulatoires", correct: true },
-            { text: "Un médecin généraliste de garde", correct: true },
-            { text: "Un médecin régulateur de l'aide médicale urgente", correct: true },
-            { text: "Un médecin du SMUR", correct: true },
-            { text: "Un médecin spécialiste (non généraliste)", correct: true }
-        ]
-    },
-    {
-        category: "NIVEAUX DE TRI",
-        text: "Quel est le pourcentage approximatif de patients se présentant dans les services d'urgence pour des soins de premier recours en France ?",
-        options: [
-            { text: "moins de 10%", correct: false },
-            { text: "un tiers", correct: false },
-            { text: "la moitié", correct: false },
-            { text: "les deux tiers", correct: true },
-            { text: "plus de 90%", correct: false }
-        ]
-    },
-    {
-        category: "NIVEAUX DE TRI",
-        text: "Dans le code de santé publique, les soins de premier recours incluent :",
-        options: [
-            { text: "la dispensation et l'administration des médicaments", correct: true },
-            { text: "la prise en charge des urgences", correct: false },
-            { text: "l'orientation dans le système de soins", correct: true },
-            { text: "la prévention, le dépistage, le diagnostic, le traitement et le suivi des patients", correct: true },
-            { text: "l'éducation pour la santé", correct: true }
-        ]
-    },
-  // ================= ORGANISATION INTRA HOSPITALIERE =================
     {
         category: "ORGANISATION INTRA HOSPITALIERE",
         text: "Concernant l'organisation de la salle des urgences vitales (SAUV) au sein d'une structure des urgences",
@@ -1589,7 +1465,7 @@ const questionsData = [
             { text: "Déposer une plainte auprès d’un avocat de son choix", correct: false },
             { text: "Déposer une plainte auprès du Conseil de l’Ordre des Médecins", correct: false },
             { text: "Déposer une plainte auprès du Directeur de l’hôpital", correct: true },
-            { text: "Déposer une plainte auprès du Tribunal Administratif", correct: false },
+            { text: "Déposer une plainte auprès du Tribunal Administratif", correct: true },
             { text: "Déposer une plainte auprès du Procureur de la République", correct: true }
         ]
     },
@@ -2105,7 +1981,6 @@ const questionsData = [
             { "text": "Concerne le plus souvent une affection du parenchyme pulmonaire - à l'étage alvéolaire", "correct": true },
             { "text": "Se manifeste prioritairement par une hypercapnie", "correct": false },
             { "text": "L'œdème aigue du poumon d'origine cardiogénique est une détresse de type 1", "correct": true },
-            { "text": "Vrai. Cette affection touche plus particulièrement l'étage alvéolaire et sa gravité tient tout d'abord à la profondeur de l'hypoxémie.", "correct": true },
             { "text": "Se manifeste prioritairement par une hypoxémie", "correct": true }
         ]
     },
@@ -2326,7 +2201,7 @@ const questionsData = [
             { "text": "Le score moteur du score de Glasgow est le mieux corrélé à la mortalité", "correct": true },
             { "text": "Le doppler trans-crânien est intéressant pour évaluer la gravité du patient. Il permet de rechercher une baisse de la pression de perfusion cérébrale (PPC) via une baisse de l’index de pulsatilité (IP)", "correct": false },
             { "text": "La gravité d’un traumatisme crânien est uniquement définie par le mécanisme ayant conduit à celui-ci (chute de hauteur, AVP haute cinétique, rixe …) et les symptômes (vomissements, céphalées, amnésie…)", "correct": false },
-            { "text": "L’hypotension artérielle est un facteur de mortalité. Ainsi on vise une PAS > 80 mmHg et une PAM > 110 mmHg (Faux : c’est l’inverse)", "correct": false }
+            { "text": "L’hypotension artérielle est un facteur de mortalité. Ainsi on vise une PAS > 80 mmHg et une PAM > 110 mmHg", "correct": false }
         ]
     },
     {
@@ -2411,7 +2286,6 @@ const questionsData = [
         "text": "A propos de l'oxygène thérapeutique",
         "options": [
             { "text": "Il peut augmenter la résistance des voies aériennes", "correct": true },
-            { "text": "L'augmentation de la résistance des voies aériennes est lié à la température et l'hygrométrie des gazs muraux, entraînant vaso et bronchoconstriction, en plus d'assécher les sécrétions des muqueuses.", "correct": true },
             { "text": "Il induit toujours une hypercapnie", "correct": false },
             { "text": "Il n'entraîne aucune complication", "correct": false },
             { "text": "Il a pour objectif d'augmenter la concentration en oxygène alvéolaire", "correct": true },
@@ -2458,7 +2332,6 @@ const questionsData = [
             { "text": "Présente comme avantage une humidification et un réchauffement des gaz inspirés", "correct": true },
             { "text": "Son application nécessite une protocolisation", "correct": true },
             { "text": "Un des intérêts est de se rapprocher de la demande du patient en débit inspiratoire", "correct": true },
-            { "text": "Vrai, le débit inspiratoire d'un patient en détresse dépasse largement les 15 litres d'un masque à haute concentration.", "correct": true },
             { "text": "Une des indications est la pneumopathie", "correct": true },
             { "text": "Les indications de cette technique sont les mêmes que la VNI classique", "correct": false }
         ]
@@ -2745,7 +2618,6 @@ const questionsData = [
             { "text": "Radiographie pré et post réduction", "correct": true },
             { "text": "Le choix de la technique de réduction dépend de la force qu’est capable d’exercer le praticien", "correct": false },
             { "text": "Le choix de la technique de réduction dépend des habitudes de l’urgentiste", "correct": true },
-            { "text": "Le choix de la technique de réduction est extrêmement important, le critère le plus important est que la technique doit être douce, une réduction n’est pas un bras de fer avec le patient.", "correct": true },
             { "text": "Analgésie", "correct": true },
             { "text": "Sédation", "correct": false }
         ]
@@ -2845,7 +2717,7 @@ const questionsData = [
             { "text": "Des signes de compressions des cavités droites", "correct": true },
             { "text": "Une veine cave inférieure collabée à l'inspiration", "correct": false },
             { "text": "Un épanchement péricardique abondant", "correct": false },
-            { "text": "Un 'Swinging heart'", "correct": false },
+            { "text": "Un 'Swinging heart'", "correct": true },
             { "text": "Une veine cave inférieure augmentée de diamètre", "correct": true }
         ]
     },
@@ -3056,7 +2928,7 @@ const questionsData = [
             { "text": "est évalué sur le plan hémodynamique par l’ITVSAo et le doppler tissulaire", "correct": false },
             { "text": "est toujours initialement pris en charge par la recherche et le contrôle d’un saignement actif important", "correct": true },
             { "text": "doit bénéficier au plus tôt d’une E-FAST", "correct": true },
-            { "text": "est pris en charge en premier par le contrôle des voies aériennes", "correct": true }
+            { "text": "est pris en charge en premier par le contrôle des voies aériennes", "correct": false }
         ]
     },
     {
